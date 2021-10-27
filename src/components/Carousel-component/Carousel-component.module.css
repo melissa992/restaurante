@@ -1,0 +1,131 @@
+*,*::after, *::before{
+  box-sizing: border-box;
+}
+
+.carousel__container{
+  position: relative;
+  margin-top: -70px;
+  overflow: hidden;
+  height: 100vh;
+}
+
+
+.c-white{
+  color: #fff !important;
+}
+
+
+.slide__content{
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.slide__content img{
+  width: 450px;
+  height: 350px;
+}
+
+.slide__content p{
+  color: var(--white);
+  font-weight: 700;
+  font-size: 3.8rem;
+  margin-top: 3rem;
+}
+
+.slide__content small{
+  display: block;
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  background-color: var(--white);
+  width: fit-content;
+  padding: .5rem;
+  clip-path: polygon(0 23%, 95% 23%, 100% 79%, 3% 90%);
+}
+
+.slide__content p span{
+  display: inline-block;
+  padding: .5rem;
+  background-color: var(--orange);
+  clip-path: polygon(0 23%, 95% 23%, 100% 79%, 3% 90%);
+}
+
+.slide__content a{
+  background-color: var(--orange);
+  color: var(--white) !important;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: .3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color .5s ease;
+}
+
+.slide__content a:hover{
+  background-color: var(--purple);
+}
+
+
+@media screen and (max-width:1140px){
+  .slide__content p{
+    margin-top: 1rem;
+    font-size: 3rem;
+  }
+}
+
+
+@media screen and (max-width:800px) {
+  .carousel__container{
+    height: auto;
+  }
+
+  .carousel_img{
+    min-height: 450px;
+  }
+
+  .slide__content img{
+    width: 300px;
+    height: 200px;
+  }
+
+  .slide__content p{
+    font-size: 2rem;
+  }
+  .slide__content button{
+    padding: .8rem 1.3rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width:550px){
+  .carousel_img{
+    min-height: 370px;
+  }
+
+  .slide__content img{
+    width: 250px;
+    height: 150px;
+  }
+
+  .slide__content p{
+    font-size:1.5rem;
+    line-height: 1rem;
+  }
+
+  .slide__content small{
+    margin-top: -.8rem;
+  }
+
+  .slide__content button{
+    padding: .8rem 1.3rem;
+    font-size: .9rem;
+  }
+}

@@ -36,3 +36,43 @@ a,a:focus,a:visited{
   color: black;
   text-decoration: none;
 }
+
+/* Bootstrap style modifications */
+.carousel-item{
+  position: relative;
+}
+
+.carousel-control-next,.carousel-control-prev{
+  opacity: .6;
+}
+.carousel,.carousel-inner,.carousel-item,.carousel_img{
+  height: 100%;
+}
+.carousel-control-prev,.carousel-control-next{
+  align-items: flex-end;
+  z-index: 10;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+  background-color: var(--orange);
+  padding: 1.5rem;
+  border-radius: 5rem;
+  transition: background-color .5s ease;
+}
+.carousel-control-prev-icon:hover,.carousel-control-next-icon:hover{
+  background-color: var(--purple);
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width:800px) {
+  .carousel_img{
+    min-height: 450px;
+  }
+}
+
+@media screen and (max-width:550px){
+  .carousel_img{
+    min-height: 370px;
+  }
+}
