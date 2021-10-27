@@ -1,0 +1,84 @@
+/* Events start */
+.events__container{
+  min-height: 80vh;
+  background-image: url('/src/assets/img/foto3@2x.png');
+  background-size: cover;
+  background-position: center;
+  padding-top: 2rem;
+  position: relative;
+}
+.events__container::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.376);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+}
+.event__title{
+  color: var(--white);
+  margin-left: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+.events{
+  width: 95%;
+  margin: 5rem auto 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+.event{
+  flex: 1 1 320px;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.164);
+  border-radius: .2rem;
+  padding-bottom: 1.8rem !important;
+}
+.event img{
+  height: 150px;
+}
+.event h3{
+  color: var(--white);
+  font-weight: 800;
+  margin-top: 1rem;
+}
+.event p{
+  margin-top: 1rem;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.event a{
+  border-radius: 100%;
+  border: 1px solid var(--white);
+  background-color: inherit;
+  color: var(--white) !important;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.event a i{
+  transition: transform .5s ease;
+}
+
+.event a:hover > i{
+  transform: rotate(360deg);
+}
+/* Events End */
+
+@media screen and (max-width:1140px){
+  .events__container{
+    margin-top: 2rem;
+  }
+}

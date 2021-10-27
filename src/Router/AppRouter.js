@@ -14,6 +14,7 @@ import { ServiciosPage } from "../pages/Servicios-page/Servicios-page";
 import { ContactanosPage } from "../pages/Contactanos-page/Contactanos-page";
 import { CarritoPage } from "../pages/Carrito-page/Carrito-page";
 import { Widget } from "../components/Social-Networks-component/Social-Networks-component";
+import { MapaPage } from "../pages/Mapa-page/Mapa-page";
 
 export const AppRouter = () => {
   return (
@@ -30,6 +31,7 @@ export const AppRouter = () => {
           <Route exact path="/Reservas" component={ ReservasPage } />
           <Route exact path="/Contactanos" component={ ContactanosPage } />
           <Route exact path="/Carrito" component={ CarritoPage } />
+          <Route exact path="/Mapa" component={ MapaPage } />
 
           <Redirect to="/Inicio"/>
         </Switch>

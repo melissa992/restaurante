@@ -4,8 +4,7 @@ import proposal from '../Our-Proposal-Component/Our-Proposal.module.css';
 export const OurProposal = ()=> {
 
   return (
-  <section  className={ proposal.proposal__container } 
-            id="PROPUESTA">
+  <section  className={ proposal.proposal__container }>
     <h2 className={ proposal.proposal__title }>
       Nuestra propuesta
     </h2>
