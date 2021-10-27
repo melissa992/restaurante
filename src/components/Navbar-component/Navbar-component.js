@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import nav from '../Navbar-component/Navbar.module.css';
 import { useCurrentWidth } from '../../hooks/useResize.js'
 import { Link, NavLink } from 'react-router-dom';
+import { NavItems } from './NavbarItems';
 
 export const Navbar = () => {
 
@@ -36,29 +37,14 @@ export const Navbar = () => {
             `${nav.linksContainer}`
           }
       >
-        <NavLink className={ nav.link__item } to="/Nosotros">
-          <i className="fas fa-address-card"></i>
-          Nosotros
-        </NavLink>
-        <NavLink className={ nav.link__item } to="/Menu">
-          <i className="fas fa-clipboard-list"></i>
-          Menú
-        </NavLink>
-        <NavLink className={ nav.link__item } to="/Servicios">
-          <i className="far fa-list-alt"></i>
-          Servicios
-        </NavLink>
-        <NavLink className={ nav.link__item } to="/Reservas">
-          <i className="far fa-calendar-check"></i>
-          Reservas
-        </NavLink>
-        <NavLink className={ nav.link__item } to="/Contactanos">
-          <i className="fas fa-phone"></i>
-          Contáctanos
-        </NavLink>
-        <NavLink className={ nav.link__item } to="/Carrito">
-          <i className="fas fa-shopping-cart"></i>
-        </NavLink>
+        { NavItems.map((item, index) => {
+          return (
+            <NavLink className={ nav.link__item } to={item.url}>
+              <i className={item.iconClass}></i>
+              {item.text}
+            </NavLink>
+          )
+        })}
       </ul>
     </nav>
   )
