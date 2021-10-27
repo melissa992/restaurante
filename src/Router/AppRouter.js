@@ -13,12 +13,14 @@ import { ReservasPage } from "../pages/Reservas-page/Reservas-page";
 import { ServiciosPage } from "../pages/Servicios-page/Servicios-page";
 import { ContactanosPage } from "../pages/Contactanos-page/Contactanos-page";
 import { CarritoPage } from "../pages/Carrito-page/Carrito-page";
+import { Widget } from "../components/Social-Networks-component/Social-Networks-component";
 
 export const AppRouter = () => {
   return (
     <Router>
       <div>
         <Navbar />
+        <Widget />
 
         <Switch>
           <Route exact path="/Inicio" component={ HomePage } />
