@@ -1,0 +1,108 @@
+.navbar{
+  background-color: rgba(0,0,0,0.89);
+  box-shadow: 0 1px 3px rgb(22, 22, 22);
+  color: rgb(255,255,255);
+  min-height: 70px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  left: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  color: rgb(255,255,255) !important;
+  margin-left: 1rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  transition: color .5s ease;
+}
+
+.logo:hover{
+  color: var(--orange) !important;
+}
+
+.button{
+  display: none;
+}
+
+.linksContainer{
+  display: flex;
+  height: auto;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width:60%;
+}
+
+.link__item{
+  flex: 1 1 auto;
+  color: var(--white) !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  align-items: center;
+  text-transform: uppercase;
+  transition: all .5s ease;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.link__item i{
+  margin-right: .4rem;
+}
+
+.link__item:hover{
+  background-color: #fff;
+  color: var(--black) !important;
+}
+
+.toggle{
+  display: none;
+}
+
+.rotate{
+  transform: rotate(360deg);
+}
+
+@media screen and (max-width:800px) {
+
+  .button{
+    display: grid;
+    place-items: center;
+    margin-right: 1rem;
+  }
+
+  .button i{
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+
+  .button i:hover{
+    color: var(--orange);
+  }
+
+  .linksContainer{
+    flex-flow: column nowrap;
+    position: absolute;
+    right: 0px;
+    top: 70px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.89);
+    justify-content: flex-start;
+    transition: transform .5s ease;
+    z-index: 110;
+  }
+
+  .link__item{
+    flex: none;
+    height: 60px;
+  }
+
+}
