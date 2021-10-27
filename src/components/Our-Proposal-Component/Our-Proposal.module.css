@@ -1,0 +1,47 @@
+/* Proposal */
+.proposal__container{
+  background-image: url('/src/assets/img/foto2@2x.png');
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  margin-top: -1px;
+  min-height: 90vh;
+  overflow: hidden;
+}
+.proposal__title{
+  color: var(--white);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 3rem 0;
+  text-align: center;
+}
+.proposal__description{
+  color: var(--white);
+  font-size: 1.1rem;
+  margin: 0 auto;
+  line-height: 2rem;
+  text-align: center;
+  width: 60%;
+}
+/* Proposal end */
+
+@media screen and (max-width:820px){
+
+  .proposal__title{
+    font-size: 2.5rem;
+    margin: 3rem auto;
+  }
+  
+  .proposal__description{
+    width: 80%;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width:550px){
+
+  .proposal__description{
+    width: 90%;
+  }
+
+}
