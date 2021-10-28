@@ -15,6 +15,7 @@ import { ContactanosPage } from "../pages/Contactanos-page/Contactanos-page";
 import { CarritoPage } from "../pages/Carrito-page/Carrito-page";
 import { Widget } from "../components/Social-Networks-component/Social-Networks-component";
 import { MapaPage } from "../pages/Mapa-page/Mapa-page";
+import { FooterComponent } from "../components/Footer-component/Footer-component";
 
 export const AppRouter = () => {
   return (
@@ -36,6 +37,7 @@ export const AppRouter = () => {
           <Redirect to="/Inicio"/>
         </Switch>
       </div>
+      <FooterComponent />
     </Router>
   );
 }
