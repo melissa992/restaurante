@@ -39,7 +39,7 @@ export const Navbar = () => {
       >
         { NavItems.map((item, index) => {
           return (
-            <NavLink className={ nav.link__item } to={item.url}>
+            <NavLink className={ nav.link__item } to={item.url} key={index}>
               <i className={item.iconClass}></i>
               {item.text}
             </NavLink>

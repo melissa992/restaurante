@@ -19,13 +19,13 @@ export const MenuPage = () => {
 
         {dishes.map((item,index) => {
           return (
-            <Dish item={ item }/>
+            <Dish item={ item } key={index}/>
           )
         })}
 
       </div>
 
-      <div  className={ menu.menu_pagination}
+      {/* <div  className={ menu.menu_pagination}
             id="pagination">
         <button className={ menu.previous } 
                 id="previous">
@@ -38,7 +38,7 @@ export const MenuPage = () => {
           SIGUIENTE 
           <i className="fas fa-arrow-right"></i>
         </button>
-      </div>
+      </div> */}
       
     </div>
   )

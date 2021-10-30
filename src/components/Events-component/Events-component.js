@@ -21,7 +21,7 @@ export const EventsComponent = ()=>{
         EventsInfo.map( (item, index) => {
 
           return (
-            <article className={ events.event }>
+            <article className={ events.event } key={index}>
               <img  src={ icons[index] }
                     alt={ item.title }/>
               <h3>{item.title}</h3>
