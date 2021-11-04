@@ -34,7 +34,7 @@ export const CarritoPage = () => {
           <ShowItemsCarrito item={item} key={item.id} />
         )
       })}
-      <TotalCarrito total={calcularTotal(dishes, itemsCarrito)} />
+      <TotalCarrito total={itemsCarrito === null ? 0 : calcularTotal(dishes, itemsCarrito)} />
       <a href="#" className="link_menu"><button className="seguir_comprando">CONTINUAR COMPRANDO</button></a>
     </div>
   )
