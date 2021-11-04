@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import image1 from "../../assets/img/menu1@2x.png"
-import { dishes } from "../../assets/js/dishesList"
+import { dishes } from "../../assets/data/dishesList"
 
 const itemsCarrito = JSON.parse(localStorage.getItem('products'))
 

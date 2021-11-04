@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { dishes } from "../../assets/js/dishesList"
-
-const itemsCarrito = JSON.parse(localStorage.getItem('products'))
+import React from 'react'
 
 const TotalCarrito = props => {
 

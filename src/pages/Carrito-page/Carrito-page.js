@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import './Carrito-page.module.css'
 import ShowItemsCarrito from './ShowItemsCarrito'
 import TotalCarrito from './TotalCarrito'
-import { dishes } from "../../assets/js/dishesList"
+import { dishes } from "../../assets/data/dishesList"
 
 export const CarritoPage = () => {
   const style = {
