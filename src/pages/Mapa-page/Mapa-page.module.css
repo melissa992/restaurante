@@ -1,0 +1,91 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.mapa__container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 80%;
+  margin: 0 auto;
+  grid-template-areas: "title title title title title"
+                       "general nosotros mapamenu servicios contact";
+
+  margin-bottom: 4rem;
+}
+
+.mapa__container > h1 {
+  align-self: end;
+  color: var(--dark-brown);
+  font-size: 6rem;
+  font-weight: 700;
+  grid-area: title;
+  padding-bottom: 5rem;
+}
+
+.mapa__container > ul {
+  width: 90%;
+  margin: 0 auto;
+  color: var(--dark-brown);
+}
+
+.mapa__container > ul > li {
+  padding: .6rem 1.2rem;
+}
+
+.mapa__container > ul > li a:hover {
+  color: var(--orange);
+}
+.mapa__general {
+  grid-area: general;
+}
+
+.mapa__nosotros {
+  grid-area: nosotros;
+}
+
+.mapa__menu {
+  grid-area: mapamenu;
+}
+
+.mapa__servicios {
+  grid-area: servicios;
+}
+
+.mapa__contactenos {
+  grid-area: contact;
+}
+
+.subtitle{
+  font-weight: 900;
+}
+
+@media screen and (max-width:820px) {
+  .mapa__container {
+    width: 95%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "title"
+                         "general"
+                         "nosotros"
+                         "mapamenu"
+                         "servicios"
+                         "contact";
+
+    margin-bottom: 0rem;
+  }
+
+  .mapa__container > h1 {
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mapa__container > ul{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}

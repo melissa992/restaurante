@@ -19,15 +19,9 @@ export const NavItems = [
   },
   {
     id: 4,
-    url: '/Reservas',
+    url: '/Contactanos',
     iconClass: 'far fa-calendar-check',
     text: 'Reservas'
-  },
-  {
-    id: 5,
-    url: '/Contactanos',
-    iconClass: 'fas fa-phone',
-    text: 'Contáctanos'
   },
   {
     id: 6,

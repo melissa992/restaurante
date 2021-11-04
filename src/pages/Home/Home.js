@@ -3,7 +3,7 @@ import { Carousel } from "../../components/Carousel-component/Carousel-component
 import { EventsComponent } from "../../components/Events-component/Events-component";
 import { OurProposal } from "../../components/Our-Proposal-Component/Our-Proposal-Component";
 import { Recommendations } from "../../components/Recommendations-component/Recommendations-component";
-import { Testimonial } from "../../components/Testimonials-component/Testimonial-component";
+import { Testimonials } from "../../components/Testimonials-component/Testimonials-component";
 
 export const HomePage = () => {
 
@@ -11,9 +11,9 @@ export const HomePage = () => {
     <div>
       <Carousel />
       <OurProposal />
-      <Recommendations/>
+      <Recommendations />
       <EventsComponent />
-      <Testimonial />
+      <Testimonials />
     </div>
   )
 }
