@@ -1,0 +1,212 @@
+*{
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 200px 1fr 200px;
+  grid-template-areas: "title title"
+                       "items reservar"
+                       "btn btn";
+  margin: 0 100px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 50px 0;
+  color: var(--dark-Slate-Gray);
+  grid-area: title;
+}
+
+.items {
+  grid-area: items;
+}
+
+.items > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-bottom: 30px;
+}
+
+.items > div > img {
+  grid-row: span 3;
+  margin-right: 20px;
+}
+
+.items > div > h3 {
+  color: var(--dark-brown);
+  font-weight: bold;
+  /*font-size: 1.5rem;*/
+  font-size: 2rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.borrar {
+  justify-self: right;
+  align-self: center;
+  font-weight: bold;
+  border: none;
+  background-color: var(--white);
+}
+
+.editar {
+  justify-self: left;
+  align-self: center;
+  font-weight: bold;
+  border: none;
+  background-color: var(--white);
+}
+
+.borrar:hover, .editar:hover {
+  cursor: pointer;
+}
+
+.items > div > p {
+  grid-column: span 4;
+}
+
+.less, .plus {
+  color: var(--dark-brown);
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  background-color: var(--white);
+  align-self: center;
+}
+
+.less {
+  justify-self: right;
+}
+
+.plus {
+  justify-self: left;
+}
+
+.less:hover, .plus:hover {
+  cursor: pointer;
+}
+
+.items > div > input {
+  justify-self: center;
+  align-self: center;
+  width: 70px;
+}
+
+.no_items {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.total {
+  grid-area: reservar;
+  background-color: var(--light-gray);
+  width: 80%;
+  height: 221px;
+  border-radius: 10px;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.total > h3 {
+  margin-left: 30px;
+  color: var(--dark-brown);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.total_price {
+  justify-self: right;
+  margin-right: 30px;
+}
+
+.total > a {
+  grid-column: span 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.total > a > button {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 10px;
+  transition: 500ms;
+  width: 200px;
+}
+
+.total > a > button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.seguir_comprando {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5px 5px;
+  transition: 500ms;
+  width: 200px;
+  height: 70px;
+  transition: 500ms;
+}
+
+.link_menu {
+  grid-area: btn;
+  justify-self: center;
+  align-self: center;
+}
+
+.seguir_comprando:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width:820px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 200px 1fr 200px;
+    grid-template-areas: "title"
+                         "reservar"
+                         "items"
+                         "btn";
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .total {
+    width: 100%;
+    height: 200px;
+  }
+  .items > div {
+    display: flex;
+    flex-flow: column;
+  }
+  .items > div > img {
+    margin: 0;
+    margin-top: 20px;
+  }
+  .no_items {
+    font-size: 2rem;
+  }
+  .total > a > button {
+    width: 150px;
+  }
+}
