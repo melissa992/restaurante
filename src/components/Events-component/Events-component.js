@@ -12,7 +12,7 @@ export const EventsComponent = ()=>{
   let icons = [icono1,icono2,icono3,icono4];
 
   return (
-  <section  className={ events.events__container }>
+  <section id="EVENTOS" className={ events.events__container }>
     <h2 className={ events.event__title}>
       Organizamos tu evento
     </h2>

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export const Carousel = ()=>{
 
   return (
-    <div  className={carousel.carousel__container}>
+    <div id="INICIO" className={carousel.carousel__container}>
       <div  id="carouselExampleIndicators"
             className="carousel slide" 
             data-bs-ride="carousel">

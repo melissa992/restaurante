@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export const Recommendations = () => {
 
   return (
-    <section  className={ recommendations.recommendation__container }>
+    <section id="RECOMENDADOS" className={ recommendations.recommendation__container }>
       <div className={ recommendations.column_1 }>
         <h2 className={recommendations.recommendation__title}>
           Los recomendados del chef

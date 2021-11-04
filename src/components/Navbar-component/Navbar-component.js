@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import nav from '../Navbar-component/Navbar.module.css';
 import { useCurrentWidth } from '../../hooks/useResize.js'
 import { Link, NavLink } from 'react-router-dom';
-import { NavItems } from './NavbarItems';
+import { NavItems } from '../../assets/data/NavbarItems';
 
 export const Navbar = () => {
 

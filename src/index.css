@@ -11,6 +11,9 @@
   --gray: #E1E1E1;
   --orange-2: #FF5500;
 }
+*{
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;

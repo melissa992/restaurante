@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { dishes } from "../../assets/js/dishesList";
+import { dishes } from "../../assets/data/dishesList";
 import { Dish } from "../../components/Dish-component/Dish-component";
 import menu from "../Menu-page/Menu-page.module.css";
 
