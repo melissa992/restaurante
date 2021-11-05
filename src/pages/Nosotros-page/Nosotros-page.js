@@ -12,7 +12,7 @@ export const NosotrosPage = () => {
     <div className={ nosotros.historia_contenedor }>
       <div className={ nosotros.historia}>
         <img  src={ restaurant } 
-              className={ nosotros.historia_imagen} />
+              className={ nosotros.historia_imagen} alt="..."/>
           <div className={ nosotros.margenes_history}>
             <div  className={ nosotros.title} id="HISTORIA">
               <h4 >Nuestra</h4>
