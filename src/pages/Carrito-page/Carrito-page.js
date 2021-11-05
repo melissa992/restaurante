@@ -29,7 +29,7 @@ export const CarritoPage = () => {
 
   return (
     <div style={style}>
-      {itemsCarrito === null ? <h2>No hay nada</h2> : itemsCarrito.map(item => {
+      {itemsCarrito === null || itemsCarrito.length === 0 ? <h2>No hay nada</h2> : itemsCarrito.map(item => {
         return (
           <ShowItemsCarrito item={item} key={item.id} />
         )

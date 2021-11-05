@@ -1,16 +1,14 @@
-.contactanos__container{
-  width: 90%;
-  margin: 0 auto;
-}
-
 .borde_conf {
   display: block;
   width: 80%;
-  padding: .5rem .1rem;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
   border-radius: 9px;
   border: 1px solid silver;
+  background: var(--gray);
   margin-bottom: 5px;
-  outline: none;
 }
 
 .button_send {
@@ -65,15 +63,4 @@
 
 .centrar_texto form input, .centrar_texto form select,.centrar_texto form textarea{
   margin: 0 auto;
-}
-
-form{
-  margin-top: 2rem !important;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
-
-form input,textarea{
-  margin: 0;
 }
