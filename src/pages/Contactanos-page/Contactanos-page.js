@@ -31,6 +31,17 @@ export const ContactanosPage = () => {
     sentForm();
   }
 
+  function getCurrentDate(){
+    const date = new Date();
+
+    const dd = (date.getDate() < 10)? '0'+ date.getDate() : date.getDate();
+    const mm = (date.getMonth() < 10)? '0'+ date.getMonth() : date.getMonth();
+    const hh = (date.getHours() < 10)? '0'+date.getHours() : date.getHours();
+    const minutes = (date.getMinutes() < 10)? '0'+date.getMinutes(): date.getMinutes();
+    const today = date.getFullYear()+'-'+(mm + 1)+'-'+dd+'T'+hh+':'+minutes;
+
+    return today.toString();
+  }
 
 
   function sentForm(){
@@ -110,7 +121,8 @@ export const ContactanosPage = () => {
             
             <input  type="datetime-local"
                     className={ contactanos.borde_conf }
-                    value={date}
+                    min={ getCurrentDate()}
+                    value={ date }
                     onChange={(e) => setDate(e.target.value)}
                     required />
 

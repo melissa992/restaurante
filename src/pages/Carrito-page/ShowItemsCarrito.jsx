@@ -8,6 +8,7 @@ const ShowItemsCarrito = (props) => {
 
   const { item } = props
 
+  
   const plato = dishes.find(x => x.id === item.id)
   const [inputValue, setInputValue] = useState(item.quantity)
 
@@ -44,7 +45,6 @@ const ShowItemsCarrito = (props) => {
       <button className="less" onClick={reduceQuantity}>-</button>
       <input type="number" min="1" className="quantity" value={inputValue} onChange={handleInputChange} />
       <button className="plus" onClick={addQuantity}>+</button>
-
     </div>
   )
 }
