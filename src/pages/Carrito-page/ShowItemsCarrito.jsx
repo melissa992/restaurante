@@ -24,11 +24,15 @@ const ShowItemsCarrito = (props) => {
   }
 
   const deleteItem = () => {
-    localStorage.setItem('products', JSON.stringify(itemsCarrito.filter(x => x.id !== item.id)))
+    if (itemsCarrito.length === 0 || itemsCarrito === undefined) {
+      localStorage.clear()
+    } else {
+      localStorage.setItem('products', JSON.stringify(itemsCarrito.filter(x => x.id !== item.id)))
+    }
   }
 
   const editItem = () => {
-    const newList = itemsCarrito.map(x => x.id === item.id ? { ...x, quantity: inputValue } : x)
+    const newList = itemsCarrito?.map(x => x.id == item.id ? { ...x, quantity: inputValue } : x)
     localStorage.setItem('products', JSON.stringify(newList))
   }
 
