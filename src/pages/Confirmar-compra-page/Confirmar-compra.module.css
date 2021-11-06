@@ -7,3 +7,51 @@
     justify-content: center;
     align-items: center;
 }
+
+body{
+    min-height:100vh ;
+  }
+  .container__confirmar{
+    display: grid;
+    place-items: start center;
+    padding: 10px 0;
+    min-height: 55vh;
+  }
+  .campoFormulario{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+  }
+  
+  form{
+    text-align: center;
+  }
+  .titulo{
+    margin: 10;
+    padding: 0;
+    color: var(--dark-Slate-Gray);
+    font-size: 40px;
+  }
+  
+  .campoFormulario input{
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #999;
+  }
+  
+  .campoFormulario label{
+    font-weight: 700;
+    color: var(--dark-Slate-Gray);
+    margin-bottom: 4px;
+  }
+  
+  .send{
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--orange);
+    transition: all .3s ease;
+  }
+  
+  
