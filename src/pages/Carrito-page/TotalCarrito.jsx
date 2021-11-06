@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TotalCarrito = props => {
 
@@ -8,7 +9,7 @@ const TotalCarrito = props => {
     <div className="total">
       <h3>TOTAL</h3>
       <h3 className="total_price" id="total_price">${total}</h3>
-      <a href="#"><button>Reservar</button></a>
+      <Link to="/Confirmar-Compra"><button>Reservar</button></Link>
     </div>
   )
 }

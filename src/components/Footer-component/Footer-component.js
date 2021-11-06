@@ -13,8 +13,7 @@ export const FooterComponent = ()=> {
       <div className={ footerStyle.footer_content}>
         <ul className={ footerStyle.links }>
           <li><Link to="/Mapa">Mapa del sitio</Link></li>
-          <li><Link to="/Contactanos">Contáctanos</Link></li>
-          <li><Link to="/Reservas">Reservas</Link></li>
+          <li><Link to="/Contactanos">Reservas o Contacto</Link></li>
         </ul>
         <div className={ footerStyle.information }>
           <span className={ footerStyle.name}>Restaurante Sal y Salsa Ltda</span>

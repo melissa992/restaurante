@@ -3,6 +3,7 @@ import './Carrito-page.module.css'
 import ShowItemsCarrito from './ShowItemsCarrito'
 import TotalCarrito from './TotalCarrito'
 import { dishes } from "../../assets/data/dishesList"
+import { Link } from "react-router-dom"
 
 export const CarritoPage = () => {
   const style = {
@@ -35,7 +36,7 @@ export const CarritoPage = () => {
         )
       })}
       <TotalCarrito total={itemsCarrito === null ? 0 : calcularTotal(dishes, itemsCarrito)} />
-      <a href="#" className="link_menu"><button className="seguir_comprando">CONTINUAR COMPRANDO</button></a>
+      <Link to="/menu" className="link_menu"><button className="seguir_comprando">CONTINUAR COMPRANDO</button></Link>
     </div>
   )
 }

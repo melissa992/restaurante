@@ -47,7 +47,7 @@ export const Carousel = ()=>{
               <img src={ logo } alt="logo restaurante" />
               <p>Viernes descuento del <span>50%</span> en recomendaciones del chef</p>
               <small>Realiza tu reserva ya</small>
-              <Link to="/reservas">
+              <Link to="/Contactanos">
                 Reservar ya <i className="fas fa-arrow-right"></i>
               </Link>
             </div>
