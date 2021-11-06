@@ -54,7 +54,8 @@ export const Formulario = () => {
               Swal.fire({
                 text: 'Correo enviado correctamente',
                 icon: 'success'
-              })
+              });
+              localStorage.clear()
             },
             (err)=>{
               Swal.fire({
