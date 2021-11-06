@@ -8,9 +8,7 @@
     align-items: center;
 }
 
-body{
-    min-height:100vh ;
-  }
+
   .container__confirmar{
     display: grid;
     place-items: start center;
