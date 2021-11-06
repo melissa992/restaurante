@@ -1,0 +1,9 @@
+.container__confirmar{
+    min-height: 80vh;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}

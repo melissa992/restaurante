@@ -15,10 +15,6 @@ export const Dish = ( { item } ) => {
   })
   
 
-  useEffect(() => {
-    localStorage.clear();
-  }, [])
-
   const [inputValue, setInputValue] = useState( 0 );
 
   const handleInputChange = ( e ) => {
