@@ -11,6 +11,16 @@
   --gray: #E1E1E1;
   --orange-2: #FF5500;
 }
+
+html{
+  box-sizing: border-box;
+}
+
+*,*::after,*::before{
+  box-sizing: inherit;
+}
+
+
 *{
   scroll-behavior: smooth;
 }

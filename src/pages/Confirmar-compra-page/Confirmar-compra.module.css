@@ -1,22 +1,11 @@
-.container__confirmar{
-    min-height: 80vh;
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-}
 
-body{
-    min-height:100vh ;
-  }
   .container__confirmar{
     display: grid;
     place-items: start center;
     padding: 10px 0;
-    min-height: 55vh;
+    min-height: calc(80vh - 70px);
   }
+
   .campoFormulario{
       display: flex;
       flex-direction: column;
