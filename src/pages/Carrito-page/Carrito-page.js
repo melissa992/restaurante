@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import './Carrito-page.module.css'
+import CarritoStyles from './Carrito-page.module.css'
 import ShowItemsCarrito from './ShowItemsCarrito'
 import TotalCarrito from './TotalCarrito'
 import { dishes } from "../../assets/data/dishesList"
@@ -23,20 +23,25 @@ export const CarritoPage = () => {
   }
 
   const [itemsCarrito, setItemsCarrito] = useState(JSON.parse(localStorage.getItem('products')))
+  const [totalAPagar, setTotalAPagar] = useState(calcularTotal(dishes, itemsCarrito))
+  console.log(totalAPagar)
 
   //useEffect(() => {
   //setItemsCarrito(JSON.parse(localStorage.getItem('products')))
   //}, [JSON.parse(localStorage.getItem('products'))])
 
   return (
-    <div style={style}>
-      {itemsCarrito === null || itemsCarrito.length === 0 ? <h2>No hay nada</h2> : itemsCarrito.map(item => {
-        return (
-          <ShowItemsCarrito item={item} key={item.id} />
-        )
-      })}
-      <TotalCarrito total={itemsCarrito === null ? 0 : calcularTotal(dishes, itemsCarrito)} />
-      <Link to="/menu" className="link_menu"><button className="seguir_comprando">CONTINUAR COMPRANDO</button></Link>
+    <div style={style} className={CarritoStyles.container}>
+      <h1>Carrito de compra</h1>
+      <div class="items">
+        {itemsCarrito === null || itemsCarrito.length === 0 ? <h2 className={CarritoStyles.no_items}>No tienes ningún elemento en el carrito</h2> : itemsCarrito.map(item => {
+          return (
+            <ShowItemsCarrito item={item} key={item.id} setTotalAPagar={setTotalAPagar} calcularTotal={calcularTotal} />
+          )
+        })}
+      </div>
+      <TotalCarrito total={itemsCarrito === null ? 0 : totalAPagar} />
+      <Link to="/menu" className="link_menu"><button className={CarritoStyles.seguir_comprando}>CONTINUAR COMPRANDO</button></Link>
     </div>
   )
 }
