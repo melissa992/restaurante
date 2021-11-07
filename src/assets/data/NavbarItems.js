@@ -24,9 +24,15 @@ export const NavItems = [
     text: 'Reservas'
   },
   {
-    id: 6,
+    id: 5,
     url: '/Carrito',
     iconClass: 'fas fa-shopping-cart',
+    text: ''
+  },
+  {
+    id: 6,
+    url: '/Ingresar',
+    iconClass: 'fas fa-user-circle',
     text: ''
   }
 ]

@@ -16,6 +16,7 @@ import { Widget } from "../components/Social-Networks-component/Social-Networks-
 import { MapaPage } from "../pages/Mapa-page/Mapa-page";
 import { FooterComponent } from "../components/Footer-component/Footer-component";
 import { Formulario } from "../pages/Confirmar-compra-page/Confirmar-compra";
+import { Login } from "../pages/Login-page/Login-page";
 
 export const AppRouter = () => {
   return (
@@ -33,6 +34,7 @@ export const AppRouter = () => {
           <Route exact path="/Carrito" component={ CarritoPage } />
           <Route exact path="/Mapa" component={ MapaPage } />
           <Route exact path="/Confirmar-Compra" component={ Formulario } />
+          <Route exact path="/Ingresar" component={ Login } />
 
           <Redirect to="/Inicio"/>
         </Switch>
