@@ -17,7 +17,12 @@ export const Navbar = () => {
   if(width < 820){
     const links = document.querySelector('#linksContainer');
 
-    links.classList?.add(nav.toggle);
+    if(links){
+      if(!links.classList?.contains(nav.toggle)){
+        links.classList?.add(nav.toggle);
+      }
+    }
+    
   }
 
   if(width >= 820){
