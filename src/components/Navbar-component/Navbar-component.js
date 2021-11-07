@@ -14,23 +14,20 @@ export const Navbar = () => {
 
   let width = useCurrentWidth();
 
-  if(width < 820){
-    const links = document.querySelector('#linksContainer');
-
-    if(links){
-      if(!links.classList?.contains(nav.toggle)){
-        links.classList?.add(nav.toggle);
-      }
-    }
-    
-  }
-
   if(width >= 820){
     const links = document.querySelector('#linksContainer');
   
     if(links){
       if(links.classList?.contains(nav.toggle)){
         links.classList?.remove(nav.toggle);
+      }
+    }
+  }else{
+    const links = document.querySelector('#linksContainer');
+  
+    if(links){
+      if(!links.classList?.contains(nav.toggle)){
+        links.classList?.add(nav.toggle);
       }
     }
   }
@@ -44,8 +41,8 @@ export const Navbar = () => {
       <ul id="linksContainer" 
           className={ 
             clicked? 
-            `${nav.linksContainer}`:
-            `${nav.linksContainer} ${nav.toggle}`
+            `${nav.linksContainer} ${nav.toggle}` : 
+            `${nav.linksContainer}`
           }
       >
         { NavItems.map((item, index) => {
