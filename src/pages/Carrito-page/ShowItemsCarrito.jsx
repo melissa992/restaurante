@@ -1,15 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import image1 from "../../assets/img/menu1@2x.png"
 import { dishes } from "../../assets/data/dishesList"
 import CarritoStyles from './Carrito-page.module.css'
 
 const ShowItemsCarrito = (props) => {
 
-  const { item, setTotalAPagar, calcularTotal } = props
+  const { item, showTotal, displayItemsCarrito } = props
 
 
   const plato = dishes.find(x => x.id === item.id)
   const [inputValue, setInputValue] = useState(item.quantity)
+
+  const calcularTotal = (dishes, tmpitems) => {
+    let sum = 0
+
+    dishes.forEach(plate => {
+      tmpitems.forEach(tmpitem => {
+        sum = plate.id === tmpitem.id ? sum + tmpitem.quantity * plate.precio : sum
+      })
+    })
+
+    return sum
+  }
 
   const handleInputChange = (e) => {
     setInputValue((e.target.value < 0) ? 1 : e.target.value);
@@ -26,13 +38,17 @@ const ShowItemsCarrito = (props) => {
   const deleteItem = () => {
     const tmpItemsCarrito = JSON.parse(localStorage.getItem('products'))
     localStorage.setItem('products', JSON.stringify(tmpItemsCarrito.filter(x => x.id !== item.id)))
+    displayItemsCarrito(JSON.parse(localStorage.getItem('products')))
+    showTotal(calcularTotal(dishes, JSON.parse(localStorage.getItem('products'))))
   }
 
   const editItem = () => {
     const tmpItemsCarrito = JSON.parse(localStorage.getItem('products'))
     localStorage.setItem('products', JSON.stringify(tmpItemsCarrito.map(x => x.id === item.id ? { ...x, quantity: inputValue } : x)))
-    setTotalAPagar(calcularTotal(dishes, JSON.parse(localStorage.getItem('products'))))
+    showTotal(calcularTotal(dishes, JSON.parse(localStorage.getItem('products'))))
   }
+
+  useEffect(() => showTotal(calcularTotal(dishes, JSON.parse(localStorage.getItem('products')))), [])
 
   return (
     <div className={CarritoStyles.plateItem}>

@@ -170,6 +170,7 @@ h1 {
   width: 200px;
   height: 70px;
   transition: 500ms;
+  margin-left: 50%;
 }
 
 .link_menu {
@@ -212,5 +213,8 @@ h1 {
   }
   .total > a > button {
     width: 150px;
+  }
+  .seguir_comprando {
+    margin-left: 5%;
   }
 }
