@@ -14,6 +14,12 @@ export const Navbar = () => {
 
   let width = useCurrentWidth();
 
+  if(width < 820){
+    const links = document.querySelector('#linksContainer');
+
+    links.classList?.add(nav.toggle);
+  }
+
   if(width >= 820){
     const links = document.querySelector('#linksContainer');
   
@@ -33,8 +39,8 @@ export const Navbar = () => {
       <ul id="linksContainer" 
           className={ 
             clicked? 
-            `${nav.linksContainer} ${nav.toggle}` : 
-            `${nav.linksContainer}`
+            `${nav.linksContainer}`:
+            `${nav.linksContainer} ${nav.toggle}`
           }
       >
         { NavItems.map((item, index) => {
