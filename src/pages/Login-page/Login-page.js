@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import loginCSS from "../Login-page/Login-page.module.css";
 
 export const Login = () => {
@@ -33,7 +34,9 @@ export const Login = () => {
                     required
             />
           </div>
-          <button type="submit">Ingresar</button>
+          <button type="submit" >
+            Ingresar
+          </button>
         </form>
       </div>
     </div>

@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import footerStyle from "../Footer-component/Footer-component.module.css";
 import logo from "../../assets/img/logo@2x.png";
 import { Link } from "react-router-dom";
 
 export const FooterComponent = ()=> {
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const [info, setInfo] = useState();
+
+  const fetchData = async()=>{
+    let url = 'https://backendapicrud.herokuapp.com/api/restaurante/informacion-restaurante';
+    await fetch(url)
+      .then(res => res.json())
+      .then(data => setInfo(data.info[0]))
+      .catch( e => console.log(e))
+  }
 
   return (
     <footer className={ footerStyle.footer }>
@@ -16,10 +30,10 @@ export const FooterComponent = ()=> {
           <li><Link to="/Contactanos">Reservas o Contacto</Link></li>
         </ul>
         <div className={ footerStyle.information }>
-          <span className={ footerStyle.name}>Restaurante Sal y Salsa Ltda</span>
-          <address className={ footerStyle.direction }>Calle 19 No. 7 - 30, Bogota</address>
-          <span className={ footerStyle.email }>reservas@salysalsa.com</span>
-          <span className={ footerStyle.phone }>31232525321</span>
+          <span className={ footerStyle.name}>{info?.name}</span>
+          <address className={ footerStyle.direction }>{info?.direction}</address>
+          <span className={ footerStyle.email }>{info?.email}</span>
+          <span className={ footerStyle.phone }>{info?.phone}</span>
 
           <span className={ footerStyle.copy }> &copy; Copyright 2020.</span>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { employees } from "../../assets/data/employees";
 import restaurant from "../../assets/img/foto4@2x.png";
 import { Collaborator } from "../../components/Collaborator-component/Collaborator-component";
@@ -6,6 +6,21 @@ import { Testimonials } from "../../components/Testimonials-component/Testimonia
 import nosotros from "../Nosotros-page/Nosotros-page.module.css";
 
 export const NosotrosPage = () => {
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const [info, setInfo] = useState();
+
+  const fetchData = async()=>{
+    let url = 'https://backendapicrud.herokuapp.com/api/restaurante/informacion-restaurante';
+    await fetch(url)
+      .then(res => res.json())
+      .then(data => setInfo(data.info[0]))
+      .catch( e => console.log(e))
+  }
+
 
 
   return (
@@ -18,29 +33,7 @@ export const NosotrosPage = () => {
               <h4 >Nuestra</h4>
               <h2 className={ nosotros.subtitle}>Historia</h2>
             </div>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo vel, eligendi excepturi non fugiat laudantium
-              ipsam?
-              Provident consequuntur ad quo vel placeat id, earum dolores aliquam aperiam laborum rerum quidem. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Illo vel, eligendi excepturi non fugiat laudantium
-              ipsam? Provident consequuntur ad quo vel placeat id, earum dolores aliquam aperiam laborum rerum quidem. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Illo vel, eligendi excepturi non fugiat laudantium
-              ipsam? Provident consequuntur ad quo vel placeat id, earum dolores aliquam aperiam laborum rerum quidem. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Illo vel, eligendi excepturi non fugiat laudantium
-              ipsam? Provident consequuntur ad quo vel placeat id, earum dolores aliquam aperiam laborum rerum quidem. orem,
-              ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptatem maxime expedita veritatis quis.
-              Dignissimos aliquid architecto quasi. Tenetur natus cupiditate vel laboriosam. Dignissimos aliquid magnam
-              obcaecati deleniti quis similique? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo vel, eligendi
-              excepturi non fugiat laudantium ipsam?
-              Provident consequuntur ad quo vel placeat id, earum dolores aliquam aperiam laborum rerum quidem. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Illo vel, eligendi excepturi non fugiat laudantium
-              ipsam? Provident consequuntur ad quo vel placeat id, earum dolores aliquam aperiam laborum rerum quidem. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Illo vel, eligendi excepturi non fugiat laudantium
-              ipsam? Provident consequuntur ad quo vel placeat id, earum dolores aliquam aperiam laborum rerum quidem. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Illo vel, eligendi excepturi non fugiat laudantium
-              ipsam? Provident consequuntur ad quo vel placeat id, earum dolores aliquam aperiam laborum rerum quidem. orem,
-              ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptatem maxime expedita veritatis quis.
-              Dignissimos aliquid architecto quasi. Tenetur natus cupiditate vel laboriosam. Dignissimos aliquid magnam
-              obcaecati deleniti quis similique?</p>
+            <p>{info?.history}</p>
           </div>
       </div>
       <div className={ nosotros.empleados } id="COLABORADORES">
