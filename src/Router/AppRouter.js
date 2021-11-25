@@ -17,6 +17,13 @@ import { MapaPage } from "../pages/Mapa-page/Mapa-page";
 import { FooterComponent } from "../components/Footer-component/Footer-component";
 import { Formulario } from "../pages/Confirmar-compra-page/Confirmar-compra";
 import { Login } from "../pages/Login-page/Login-page";
+import { DashboardAdmin } from "../pages/Dashboard-admin-page/Dashboard-admin";
+import { InfoRestaurante } from "../pages/InformacionRest-page/InformacionRest-page";
+import { Empleados } from "../pages/GestorEmpleados-page/GestorEmpleados-page";
+import { Comentario } from "../pages/GestorComentarios-page/GestorComentarios-page";
+import { Platos } from "../pages/GestorPlatos-page/GestorPlatos-page";
+import { Preguntas } from "../pages/GestorPreguntas-page/GestorPreguntas-page";
+import { Reservas } from "../pages/GestorReservas-page/GestorReservas-page";
 
 export const AppRouter = () => {
   return (
@@ -35,6 +42,13 @@ export const AppRouter = () => {
           <Route exact path="/Mapa" component={ MapaPage } />
           <Route exact path="/Confirmar-Compra" component={ Formulario } />
           <Route exact path="/Ingresar" component={ Login } />
+          <Route exact path="/DashboardAdmin" component={ DashboardAdmin} />
+          <Route exact path="/InfoRestaurante" component={ InfoRestaurante } />
+          <Route exact path="/Empleados" component={ Empleados } />
+          <Route exact path="/Comentarios" component={ Comentario } />
+          <Route exact path="/Platos" component={ Platos } />
+          <Route exact path="/Preguntas" component={ Preguntas } />
+          <Route exact path="/Reservas" component={ Reservas } />
 
           <Redirect to="/Inicio"/>
         </Switch>

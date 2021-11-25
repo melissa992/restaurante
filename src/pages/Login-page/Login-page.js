@@ -35,7 +35,9 @@ export const Login = () => {
             />
           </div>
           <button type="submit" >
-            Ingresar
+            <Link to="/DashboardAdmin">
+              Ingresar
+            </Link>
           </button>
         </form>
       </div>

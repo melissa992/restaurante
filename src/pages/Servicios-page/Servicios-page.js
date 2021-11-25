@@ -1,9 +1,22 @@
-import React from "react";
-import { services } from "../../assets/data/services";
+import React, { useEffect, useState } from "react";
 import { ServiceCard } from "../../components/Service-card-component/Service-card-component";
-import menuImg from "../../assets/img/menu2@2x.png";
+
 
 export const ServiciosPage = () => {
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const [info, setInfo] = useState([]);
+
+  const fetchData = async()=>{
+    let url = 'https://backendapicrud.herokuapp.com/api/servicios/ver-servicios';
+    await fetch(url)
+      .then(res => res.json())
+      .then(data => setInfo(data.info))
+      .catch( e => console.log(e))
+  }
 
   return (
     <div className="container mt-5" >
@@ -36,8 +49,8 @@ export const ServiciosPage = () => {
       <div class="row" id="LISTA_SERVICIOS">
         
         {
-          services.map( (value, index) => {
-            return <ServiceCard key={index} info={value} img={menuImg}/>
+          info?.map( (value, index) => {
+            return <ServiceCard key={index} info={value} />
           })
         }
       </div>  

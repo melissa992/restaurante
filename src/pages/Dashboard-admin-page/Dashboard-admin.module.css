@@ -1,0 +1,40 @@
+.dashboard_container{
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 30vh - 70px);
+}
+
+.content{
+  width: 60%;
+  padding: 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.5rem;
+}
+
+
+.card_container{
+  
+  flex: 1 1 30%;
+}
+
+.card{
+  background-color: var(--dark-brown);
+  color: var(--white);
+  padding: 1rem;
+  min-height: 150px;
+  border-radius: .5rem;
+  display: grid;
+  place-items: center;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  filter: drop-shadow(2px 2px 4px rgb(168, 168, 168));
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.card:hover{
+  background-color: var(--white);
+  color: var(--dark-brown);
+}

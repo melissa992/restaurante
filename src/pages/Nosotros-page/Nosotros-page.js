@@ -21,8 +21,6 @@ export const NosotrosPage = () => {
       .catch( e => console.log(e))
   }
 
-
-
   return (
     <div className={ nosotros.historia_contenedor }>
       <div className={ nosotros.historia}>
