@@ -30,6 +30,7 @@ import { Servicios } from "../pages/GestorServicios-page/GestorServicios-page";
 import { AgregarServicio } from "../pages/AgregarServicio-page/AgregarServicio-page";
 import { EditarServicio } from "../pages/EditarServicio-page/EditarServicio-page";
 import { DashboardClient } from "../pages/Dashboard-client-page/Dashboard-client";
+import { AgregarComentario } from "../pages/AgregarComentario-page/AgregarComentario";
 
 export const AppRouter = () => {
   return (
@@ -61,6 +62,7 @@ export const AppRouter = () => {
           <Route exact path="/AgregarServicio" component={AgregarServicio}/>
           <Route exact path="/EditarServicio/:id" component={ EditarServicio}/>
           <Route exact path="/DashboardClient" component={DashboardClient}/>
+          <Route exact path="/AgregarComentario" component={AgregarComentario}/>
 
           <Redirect to="/Inicio"/>
         </Switch>
