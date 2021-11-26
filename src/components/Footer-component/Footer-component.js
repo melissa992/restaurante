@@ -4,12 +4,12 @@ import logo from "../../assets/img/logo@2x.png";
 import { Link } from "react-router-dom";
 
 export const FooterComponent = ()=> {
+  const [info, setInfo] = useState();
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [info]);
 
-  const [info, setInfo] = useState();
 
   const fetchData = async()=>{
     let url = 'https://backendapicrud.herokuapp.com/api/restaurante/informacion-restaurante';

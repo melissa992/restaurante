@@ -110,9 +110,9 @@ export const Dish = ( { item } ) => {
     <div className={ dish.plate }>
               <img className={ dish.plate__image } src={ image1 } alt=""/>
               <div className={ dish.plate__description }>
-                <h2 className={ dish.name }>{item.nombre}</h2>
-                <p className={ dish.description }> { item.descripcion }</p>
-                <p className={ dish.price }>$ { item.precio }</p>
+                <h2 className={ dish.name }>{item.name}</h2>
+                <p className={ dish.description }> { item.description }</p>
+                <p className={ dish.price }>$ { item.price }</p>
               </div>
               <div className={ dish.buttons__container}>
                 <span>Cantidad</span>

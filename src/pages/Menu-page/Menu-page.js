@@ -1,10 +1,26 @@
-import React, { useState } from "react";
-import { dishes } from "../../assets/data/dishesList";
+import React, { useEffect, useState } from "react";
 import { Dish } from "../../components/Dish-component/Dish-component";
 import menu from "../Menu-page/Menu-page.module.css";
 
 
 export const MenuPage = () => {
+
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  },[]);
+
+
+  const fetchData = async()=>{
+    let url = 'https://backendapicrud.herokuapp.com/api/platos/ver-platos';
+    await fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setInfo(data.info);
+      })
+      .catch( () => {})
+  }
 
   return (
     <div  className={ menu.menu__container }
@@ -17,7 +33,7 @@ export const MenuPage = () => {
       <div  className={ menu.menu__items } 
             id="menu-items">
 
-        {dishes.map((item,index) => {
+        {info.map((item,index) => {
           return (
             <Dish item={ item } key={index}/>
           )

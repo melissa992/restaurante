@@ -35,6 +35,7 @@
 }
 
 .buttons__container{
+  margin-left: auto;
   display: flex;
   flex-flow: column nowrap;
 }

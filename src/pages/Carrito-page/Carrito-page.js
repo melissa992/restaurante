@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import CarritoStyles from './Carrito-page.module.css'
 import ShowItemsCarrito from './ShowItemsCarrito'
 import TotalCarrito from './TotalCarrito'
-import { dishes } from "../../assets/data/dishesList"
 import { Link } from "react-router-dom"
 
 export const CarritoPage = () => {

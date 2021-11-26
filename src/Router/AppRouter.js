@@ -24,6 +24,12 @@ import { Comentario } from "../pages/GestorComentarios-page/GestorComentarios-pa
 import { Platos } from "../pages/GestorPlatos-page/GestorPlatos-page";
 import { Preguntas } from "../pages/GestorPreguntas-page/GestorPreguntas-page";
 import { Reservas } from "../pages/GestorReservas-page/GestorReservas-page";
+import { AgregarPlato } from "../pages/AgregarPlato-page/AgregarPlato";
+import { EditarPlato } from "../pages/EditarPlato-page/EditarPlato-page";
+import { Servicios } from "../pages/GestorServicios-page/GestorServicios-page";
+import { AgregarServicio } from "../pages/AgregarServicio-page/AgregarServicio-page";
+import { EditarServicio } from "../pages/EditarServicio-page/EditarServicio-page";
+import { DashboardClient } from "../pages/Dashboard-client-page/Dashboard-client";
 
 export const AppRouter = () => {
   return (
@@ -49,6 +55,12 @@ export const AppRouter = () => {
           <Route exact path="/Platos" component={ Platos } />
           <Route exact path="/Preguntas" component={ Preguntas } />
           <Route exact path="/Reservas" component={ Reservas } />
+          <Route exact path="/VerServicios" component={ Servicios } />
+          <Route exact path="/AgregarPlato" component={AgregarPlato}/>
+          <Route exact path="/EditarPlato/:id" component={EditarPlato} />
+          <Route exact path="/AgregarServicio" component={AgregarServicio}/>
+          <Route exact path="/EditarServicio/:id" component={ EditarServicio}/>
+          <Route exact path="/DashboardClient" component={DashboardClient}/>
 
           <Redirect to="/Inicio"/>
         </Switch>

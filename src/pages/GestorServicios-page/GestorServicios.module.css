@@ -10,7 +10,7 @@
   padding: 0 .5em;
 }
 
-.dishes__container{
+.services__container{
   display: flex;
   flex-flow: column nowrap;
   margin-left: 5%;
@@ -33,7 +33,7 @@
   color: var(--white);
 }
 
-.dish{
+.service{
   display: flex;
   flex-flow: row nowrap;
   margin-bottom: 1rem;
@@ -42,26 +42,25 @@
   overflow: hidden;
 }
 
-.dish img{
+.service img{
   width: 175px;
   height: 150px;
 }
 
-.dish__content{
+.service__content{
   padding-left: 1rem;
   width: 100%;
   position: relative;
 }
 
-.dish__content h2{
+.service__content h2{
   margin: 0;
   font-weight: 700;
   color: var(--dark-brown);
   text-transform: uppercase;
 }
 
-.dish__content small{
-  display: block;
+.service__content small{
   font-size: 1.1rem;
   color: var(--dark-brown);
 }

@@ -51,6 +51,13 @@ export const DashboardAdmin = () => {
             </div>
           </Link>
         </div>
+        <div className={dashboard.card_container}>
+          <Link to="/VerServicios">
+            <div className={dashboard.card}>
+              Gestor de Servicios
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   )

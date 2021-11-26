@@ -4,8 +4,6 @@ import menuImg from "../../assets/img/menu2@2x.png";
 
 export const ServiceCard = ({info}) => {
 
-  console.log(info);
-
   return (
     <div className="col-md-6">
       <div className="card my-3 card-background">

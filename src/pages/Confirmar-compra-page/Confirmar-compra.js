@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react'
 import Confirmar from "../Confirmar-compra-page/Confirmar-compra.module.css";
-import { dishes } from "../../assets/data/dishesList";
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
@@ -10,6 +9,23 @@ export const Formulario = () => {
 
     const [name, setName] = useState("");
     const [mail, setEmail] = useState("");
+    const [info, setInfo] = useState([]);
+  
+
+    useEffect(() => {
+        fetchData();
+    },[]);
+
+
+    const fetchData = async()=>{
+        let url = 'https://backendapicrud.herokuapp.com/api/platos/ver-platos';
+        await fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            setInfo(data.info);
+        })
+        .catch( () => {})
+    }
 
 
     const handleSubmit = (e) => {
@@ -30,11 +46,11 @@ export const Formulario = () => {
         let productosInfo = "";
         let precioTotal = 0;
         productos.forEach(element => {
-            let position = dishes.findIndex(dish => dish.id == element.id);
-            let precioTemp = (dishes[position].precio) * Number(element.quantity);
+            let position = info.findIndex(dish => dish.id == element.id);
+            let precioTemp = (info[position].price) * Number(element.quantity);
             let infoTemp = `
-            Producto = ${dishes[position].nombre},
-            Valor unitario = ${dishes[position].precio},
+            Producto = ${info[position].name},
+            Valor unitario = ${info[position].price},
             Cantidad = ${element.quantity}
             Valor Total = ${precioTemp};
             `;
