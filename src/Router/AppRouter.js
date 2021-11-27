@@ -22,7 +22,6 @@ import { InfoRestaurante } from "../pages/InformacionRest-page/InformacionRest-p
 import { Empleados } from "../pages/GestorEmpleados-page/GestorEmpleados-page";
 import { Comentario } from "../pages/GestorComentarios-page/GestorComentarios-page";
 import { Platos } from "../pages/GestorPlatos-page/GestorPlatos-page";
-import { Preguntas } from "../pages/GestorPreguntas-page/GestorPreguntas-page";
 import { Reservas } from "../pages/GestorReservas-page/GestorReservas-page";
 import { AgregarPlato } from "../pages/AgregarPlato-page/AgregarPlato";
 import { EditarPlato } from "../pages/EditarPlato-page/EditarPlato-page";
@@ -31,6 +30,7 @@ import { AgregarServicio } from "../pages/AgregarServicio-page/AgregarServicio-p
 import { EditarServicio } from "../pages/EditarServicio-page/EditarServicio-page";
 import { DashboardClient } from "../pages/Dashboard-client-page/Dashboard-client";
 import { AgregarComentario } from "../pages/AgregarComentario-page/AgregarComentario";
+import { EditarReserva } from "../pages/EditarReserva/EditarReserva";
 
 export const AppRouter = () => {
   return (
@@ -54,7 +54,6 @@ export const AppRouter = () => {
           <Route exact path="/Empleados" component={ Empleados } />
           <Route exact path="/Comentarios" component={ Comentario } />
           <Route exact path="/Platos" component={ Platos } />
-          <Route exact path="/Preguntas" component={ Preguntas } />
           <Route exact path="/Reservas" component={ Reservas } />
           <Route exact path="/VerServicios" component={ Servicios } />
           <Route exact path="/AgregarPlato" component={AgregarPlato}/>
@@ -63,6 +62,7 @@ export const AppRouter = () => {
           <Route exact path="/EditarServicio/:id" component={ EditarServicio}/>
           <Route exact path="/DashboardClient" component={DashboardClient}/>
           <Route exact path="/AgregarComentario" component={AgregarComentario}/>
+          <Route exact path="/EditarReserva/:id" component={ EditarReserva}/>
 
           <Redirect to="/Inicio"/>
         </Switch>
