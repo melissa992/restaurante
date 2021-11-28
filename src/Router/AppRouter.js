@@ -56,7 +56,6 @@ export const AppRouter = () => {
           <Route exact path="/Empleados" component={Empleados} />
           <Route exact path="/Comentarios" component={Comentario} />
           <Route exact path="/Platos" component={Platos} />
-          <Route exact path="/Preguntas" component={Preguntas} />
           <Route exact path="/Reservas" component={Reservas} />
           <Route exact path="/VerServicios" component={Servicios} />
           <Route exact path="/AgregarPlato" component={AgregarPlato} />
