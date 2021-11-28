@@ -15,7 +15,7 @@ export const DashboardClient = () => {
           </Link>
         </div>
         <div className={dashboard.card_container}>
-          <Link to="/VerReservasCliente/fesfefsef">
+          <Link to="/VerReservasCliente">
             <div className={dashboard.card}>
                 Ver reservas
             </div>

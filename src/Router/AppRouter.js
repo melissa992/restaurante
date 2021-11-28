@@ -66,7 +66,7 @@ export const AppRouter = () => {
           <Route exact path="/DashboardClient" component={DashboardClient} />
           <Route exact path="/AgregarComentario" component={AgregarComentario} />
           <Route exact path="/EditarReserva/:id" component={ EditarReserva}/>
-          <Route exact path="/VerReservasCliente/:id" component={ VerReservasCliente }/>
+          <Route exact path="/VerReservasCliente" component={ VerReservasCliente }/>
 
 
           <Redirect to="/Inicio" />
