@@ -33,7 +33,7 @@ export const Login = () => {
           let decoded = jwt_decode(token)
           console.log(decoded)
           if (decoded.role !== 0) {
-            history.push('/Inicio')
+            history.push('/DashboardClient')
           } else {
             history.push('/DashboardAdmin')
           }
