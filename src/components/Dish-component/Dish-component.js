@@ -108,7 +108,7 @@ export const Dish = ( { item } ) => {
 
   return (
     <div className={ dish.plate }>
-              <img className={ dish.plate__image } src={ image1 } alt=""/>
+              <img className={ dish.plate__image } src={ item.image } alt=""/>
               <div className={ dish.plate__description }>
                 <h2 className={ dish.name }>{item.name}</h2>
                 <p className={ dish.description }> { item.description }</p>

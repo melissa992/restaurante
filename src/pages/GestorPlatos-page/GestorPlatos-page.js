@@ -24,6 +24,7 @@ export const Platos = () => {
       .then(data => {
         setInfo(data.info);
         setPlatoEliminado(false);
+        console.log(data.info)
       })
       .catch( () => {})
   }
@@ -61,7 +62,7 @@ export const Platos = () => {
           info?.map( (dish,index) => {
             
             return <div key={index} className={pageStyles.dish}>
-              <img src={image1} alt={dish?.name}></img>
+              <img src={dish?.image} alt={dish?.name}></img>
               <div className={ pageStyles.dish__content}>
                 <h2>{dish?.name}</h2>
                 <small>{dish?.description}</small>

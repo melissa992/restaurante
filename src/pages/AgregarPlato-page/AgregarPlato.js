@@ -10,6 +10,7 @@ export const AgregarPlato = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
+  const [url, setUrl] = useState("");
 
 
   const CrearPlato = ()=> {
@@ -19,7 +20,7 @@ export const AgregarPlato = () => {
         name: name,
         price:  price,
         description: description,
-        image: "menu2@2x.png"
+        image: url
       }
       GuardarPlato(temp);
       history.push("/Platos");
@@ -52,7 +53,7 @@ export const AgregarPlato = () => {
       </h1>
       <div className={pageStyles.container__img}>
         <img  className={ pageStyles.img } 
-              src={ image1 }></img>
+              src={ url }></img>
       </div>
       <div className={pageStyles.form__block}>
         <label  className={pageStyles.form__label}>
@@ -82,6 +83,15 @@ export const AgregarPlato = () => {
                 type="text" 
                 value={description} 
                 onChange={(e) => setDescription(e.target.value)}></input>
+      </div>
+      <div  className={pageStyles.form__block}>
+        <label className={pageStyles.form__label}>
+          Imagen:
+        </label>
+        <input  className={ pageStyles.form__input}
+                type="url" 
+                value={url} 
+                onChange={(e) => setUrl(e.target.value)}></input>
       </div>
       <button className={ pageStyles.button}
               onClick={ CrearPlato }>agregar un plato</button>

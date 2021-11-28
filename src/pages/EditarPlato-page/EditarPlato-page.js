@@ -84,7 +84,7 @@ export const EditarPlato = () => {
         Plato: {info?.name}
       </h1>
       <div  className={pageStyles.container__img}>
-        <img  src={image1}
+        <img  src={info?.image}
               alt={info?.name}
               className={pageStyles.img}>
         </img>
@@ -122,6 +122,18 @@ export const EditarPlato = () => {
                     onChange={(e) => change(e,'description')}>
         </textarea>
       </div>
+
+      <div  className={pageStyles.form__block}>
+        <label  className={pageStyles.form__label}>
+          imagen:
+        </label>
+        <input   className={pageStyles.form__input}
+                    type="url" 
+                    defaultValue={info?.image} 
+                    onChange={(e) => change(e,'image')}>
+        </input>
+      </div>
+
       <div  className={pageStyles.container__btns}>
         <button className={pageStyles.btn__edit}
                 onClick={()=>updateInfo()}>Guardar</button>
