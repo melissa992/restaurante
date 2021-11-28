@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from 'react-router';
-import image1 from "../../assets/img/menu1@2x.png";
 import pageStyles from "../EditarServicio-page/EditarServicio.module.css";
 import Swal from "sweetalert2";
 
@@ -82,7 +81,7 @@ export const EditarServicio = () => {
 
       <div  className={pageStyles.container__img}>
         <img  className={pageStyles.img} 
-              src={image1} 
+              src={info?.image} 
               alt={info?.name}>
         </img>
       </div>
@@ -102,10 +101,22 @@ export const EditarServicio = () => {
         <label  className={pageStyles.form__label}>
           Descripcion:
         </label>
-        <input  className={pageStyles.form__input}
+        <textarea  className={pageStyles.form__input}
                 type="text" 
                 defaultValue={info?.description} 
+                rows="10"
                 onChange={(e) => change(e,'description')}>
+        </textarea>
+      </div>
+
+      <div  className={pageStyles.form__block}>
+        <label  className={pageStyles.form__label}>
+          imagen:
+        </label>
+        <input  className={pageStyles.form__input}
+                type="url" 
+                defaultValue={info?.image} 
+                onChange={(e) => change(e,'image')}>
         </input>
       </div>
 

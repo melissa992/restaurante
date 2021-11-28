@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import image1 from "../../assets/img/menu1@2x.png"
 import CarritoStyles from './Carrito-page.module.css'
 
 
@@ -69,7 +68,7 @@ const ShowItemsCarrito = (props) => {
   return (
     <div className={CarritoStyles.plateItem}>
 
-      <img className={CarritoStyles.plate_img} src={image1} width="250" alt="" />
+      <img className={CarritoStyles.plate_img} src={plato?.image} width="250" alt="" />
       <h3 className={CarritoStyles.title_name}>{plato?.name}</h3>
       <h3 className={CarritoStyles.plate_price}>${plato?.price}</h3>
       <button className={CarritoStyles.borrar} onClick={deleteItem}><i className="fa fa-trash" aria-hidden="true"></i></button>

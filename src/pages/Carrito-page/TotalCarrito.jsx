@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CarritoStyles from './Carrito-page.module.css'
-import { dishes } from "../../assets/data/dishesList"
 
 const TotalCarrito = props => {
 

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import loginCSS from "../Login-page/Login-page.module.css";
-import jwt_decode from 'jwt-decode'
 
 export const Registration = () => {
 

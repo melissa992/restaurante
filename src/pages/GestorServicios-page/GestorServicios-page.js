@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import menuImg from "../../assets/img/menu2@2x.png";
 import { useHistory } from 'react-router';
 import pageStyles from "../GestorServicios-page/GestorServicios.module.css";
 import Swal from "sweetalert2";
@@ -63,7 +62,7 @@ export const Servicios = () => {
         info?.map((value,index)=> {
           return <div key={index} 
                       className={pageStyles.service}>
-            <img src={menuImg} alt={value.name}></img>
+            <img src={value.image} alt={value.name}></img>
             <div  className={pageStyles.service__content}>
               <h2>{value.name}</h2>
               <small>{value.description}</small>

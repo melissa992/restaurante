@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import image1 from "../../assets/img/menu1@2x.png";
 import pageStyles from "../GestorPlatos-page/GestorPlatos-page.module.css";
 import { useHistory } from 'react-router';
 import swal from 'sweetalert2';

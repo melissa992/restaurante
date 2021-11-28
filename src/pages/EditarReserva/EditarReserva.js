@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import image1 from "../../assets/img/menu1@2x.png";
 import { useParams} from "react-router-dom";
 import { useHistory } from 'react-router';
 import pageStyles from "../EditarPlato-page/EditarPlato-page.module.css";
@@ -21,7 +20,7 @@ export const EditarReserva = () => {
     await fetch(url)
       .then(res => res.json())
       .then(data => {
-        setInfo(data.info[0]);
+        setInfo(data.info);
       })
       .catch( () => {})
   }
@@ -132,7 +131,7 @@ export const EditarReserva = () => {
         </label>
         <input  className={pageStyles.form__input}
                 type="text"
-                defaultValue={converDate(info?.date)} 
+                value={converDate(info?.date)} 
                 disabled>
         </input>
       </div>

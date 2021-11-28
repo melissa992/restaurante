@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import image1 from "../../assets/img/menu1@2x.png";
 import { useParams} from "react-router-dom";
 import { useHistory } from 'react-router';
 import pageStyles from "../EditarPlato-page/EditarPlato-page.module.css";

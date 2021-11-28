@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import propTypes from 'prop-types';
 import dish from "../Dish-component/Dish-component.module.css";
-import image1 from "../../assets/img/menu1@2x.png";
 import Swal from 'sweetalert2'
 
 export const Dish = ( { item } ) => {

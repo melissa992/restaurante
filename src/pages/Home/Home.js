@@ -4,7 +4,6 @@ import { EventsComponent } from "../../components/Events-component/Events-compon
 import { OurProposal } from "../../components/Our-Proposal-Component/Our-Proposal-Component";
 import { Recommendations } from "../../components/Recommendations-component/Recommendations-component";
 import { Testimonials } from "../../components/Testimonials-component/Testimonials-component";
-import { Formulario } from "../Confirmar-compra-page/Confirmar-compra";
 
 export const HomePage = () => {
 

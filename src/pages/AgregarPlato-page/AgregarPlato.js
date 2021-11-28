@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from 'react-router';
 import pageStyles from '../AgregarPlato-page/AgregarPlato.module.css'
-import image1 from "../../assets/img/menu1@2x.png";
 import Swal from 'sweetalert2';
 
 export const AgregarPlato = () => {

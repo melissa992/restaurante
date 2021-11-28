@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import menuImg from "../../assets/img/menu2@2x.png";
 import pageStyles from '../AgregarPlato-page/AgregarPlato.module.css';
 import Swal from 'sweetalert2';
 
@@ -9,6 +8,7 @@ export const AgregarServicio = () => {
   let history = useHistory();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [url, setUrl] = useState("");
 
   const CrearServicio = ()=> {
     if((name.trim().length !== 0) && (description.trim().length !== 0)){
@@ -17,7 +17,7 @@ export const AgregarServicio = () => {
         id: new Date().getTime(),
         name: name,
         description: description,
-        image: "menu2@2x.png"
+        image: url
       }
       GuardarServicio(temp);
       history.push("/VerServicios");
@@ -50,8 +50,8 @@ export const AgregarServicio = () => {
         Agregar Servicio
       </h1>
       <div  className={pageStyles.container__img}>
-        <img  src={menuImg}
-              alt="preview"
+        <img  src={url}
+              alt={name}
               className={pageStyles.img}></img>
       </div>
       <div  className={pageStyles.form__block}>
@@ -73,6 +73,16 @@ export const AgregarServicio = () => {
                   value={description} 
                   onChange={(e) => setDescription(e.target.value)}>
         </textarea>
+      </div>
+      <div  className={pageStyles.form__block}>
+        <label  className={pageStyles.form__label}>
+          Imagen:
+        </label>
+        <input className={pageStyles.form__input}
+                  type="url" 
+                  value={url} 
+                  onChange={(e) => setUrl(e.target.value)}>
+        </input>
       </div>
       <button className={pageStyles.button} onClick={ CrearServicio }>Guardar</button>
     </div>
