@@ -20,7 +20,7 @@ export const Login = () => {
         correo: ID,
         password: password
       }
-      let url = 'https://backendapicrud.herokuapp.com/api/auth/ingresar'
+      let url = 'http://127.0.0.1:4000/api/auth/ingresar'
       await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
