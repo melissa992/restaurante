@@ -3,6 +3,6 @@ import './index.css';
 import { AppRouter }  from './Router/AppRouter';
 
 ReactDOM.render(
-  <AppRouter />,
-  document.getElementById('root')
+    <AppRouter />,
+    document.getElementById('root')
 );
