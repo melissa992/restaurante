@@ -10,7 +10,7 @@
     padding: 0 .5em;
   }
   
-  .dishes__container{
+  .reservas__container{
     display: flex;
     flex-flow: column nowrap;
     margin-left: 5%;
@@ -33,7 +33,7 @@
     color: var(--white);
   }
   
-  .dish{
+  .reserva{
     display: flex;
     flex-flow: row nowrap;
     margin-bottom: 1rem;
@@ -47,13 +47,13 @@
     height: 150px;
   }
   
-  .dish__content{
+  .reservas__content{
     padding-left: 1rem;
     width: 100%;
     position: relative;
   }
   
-  .dish__content h2{
+  .reservas__content h2{
     margin: 0;
     font-weight: 700;
     color: var(--dark-brown);
@@ -94,14 +94,6 @@
   }
   
   @media (hover:hover){
-    .addBtn:hover{
-      background-color: var(--orange);
-    }
-  
-    .addBtn:hover i{
-      color: var(--dark-Slate-Gray);
-    }
-  
     .btn__del:hover{
       background-color: var(--white);
       color: rgb(216, 29, 29);
@@ -111,14 +103,4 @@
       background-color: var(--white);
       color: rgb(25, 116, 236);
     }
-  }
-  
-  @media screen and (max-width:650px){
-    .addBtn{
-      top: unset;
-      bottom: 20px;
-      right: 20px;
-      left: unset;
-    }
-  
   }

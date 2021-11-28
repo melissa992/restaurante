@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import dashboard from "../Dashboard-admin-page/Dashboard-admin.module.css";
 
 export const DashboardClient = () => {
+
   return (
     <div className={dashboard.dashboard_container}>
       <div className={dashboard.content}>
@@ -10,6 +11,13 @@ export const DashboardClient = () => {
           <Link to="/AgregarComentario">
             <div className={dashboard.card}>
                 Agregar comentario
+            </div>
+          </Link>
+        </div>
+        <div className={dashboard.card_container}>
+          <Link to="/VerReservasCliente/fesfefsef">
+            <div className={dashboard.card}>
+                Ver reservas
             </div>
           </Link>
         </div>

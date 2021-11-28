@@ -50,15 +50,17 @@ export const Reservas = () => {
     <div className={ pageStyles.container}>
 
       <h1 className={ pageStyles.container__title}>Gestor Reservas</h1>
-      <div className={ pageStyles.dishes__container}>
+      <div className={ pageStyles.reservas__container}>
       {
           info?.map( (reserva,index) => {
             
-            return <div key={index} className={pageStyles.dish}>
-              <h2>{reserva?.typeService}</h2>
-              <h3>{reserva?.email}</h3>
-              <h3>{reserva?.phone}</h3>
-              <button onClick={()=>EliminarReserva(reserva?.id)}
+            return <div key={index} className={pageStyles.reserva}>
+              <div  className={ pageStyles.reservas__content}>
+                <h2>{reserva?.typeService}</h2>
+                <h3>{reserva?.email}</h3>
+                <h3>{reserva?.phone}</h3>
+                <div className={ pageStyles.container__btns}>
+                 <button onClick={()=>EliminarReserva(reserva?.id)}
                           className={ pageStyles.btn__del}>
                     <i className="fa fa-trash" aria-hidden="true"></i>
                   </button>
@@ -66,6 +68,8 @@ export const Reservas = () => {
                             onClick={()=>history.push(`/EditarReserva/${reserva?.id}`)}>
                     <i className="fas fa-edit"></i>
                   </button>
+                </div>
+              </div>
             </div>
 
           })

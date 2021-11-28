@@ -32,6 +32,7 @@ import { EditarServicio } from "../pages/EditarServicio-page/EditarServicio-page
 import { DashboardClient } from "../pages/Dashboard-client-page/Dashboard-client";
 import { AgregarComentario } from "../pages/AgregarComentario-page/AgregarComentario";
 import { EditarReserva } from "../pages/EditarReserva/EditarReserva";
+import { VerReservasCliente } from "../pages/VerReservasCliente/VerReservasCliente";
 
 export const AppRouter = () => {
   return (
@@ -56,7 +57,6 @@ export const AppRouter = () => {
           <Route exact path="/Empleados" component={Empleados} />
           <Route exact path="/Comentarios" component={Comentario} />
           <Route exact path="/Platos" component={Platos} />
-          <Route exact path="/Preguntas" component={Preguntas} />
           <Route exact path="/Reservas" component={Reservas} />
           <Route exact path="/VerServicios" component={Servicios} />
           <Route exact path="/AgregarPlato" component={AgregarPlato} />
@@ -66,6 +66,7 @@ export const AppRouter = () => {
           <Route exact path="/DashboardClient" component={DashboardClient} />
           <Route exact path="/AgregarComentario" component={AgregarComentario} />
           <Route exact path="/EditarReserva/:id" component={ EditarReserva}/>
+          <Route exact path="/VerReservasCliente/:id" component={ VerReservasCliente }/>
 
 
           <Redirect to="/Inicio" />

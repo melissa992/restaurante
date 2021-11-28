@@ -77,6 +77,17 @@ export const EditarReserva = () => {
       }))
   }
 
+  function converDate(date){
+    let tempDate = new Date(date);
+    let year = tempDate.getFullYear();
+    let month = tempDate.getMonth();
+    let day = tempDate.getDay();
+    let hour = tempDate.getHours();
+    let minutes = tempDate.getMinutes();
+
+    return `${year}/${month}/${day} ${hour}:${minutes}`
+  }
+
   return (
     <div  className={pageStyles.container}>
       <h1 className={pageStyles.container__title}>
@@ -121,7 +132,7 @@ export const EditarReserva = () => {
         </label>
         <input  className={pageStyles.form__input}
                 type="text"
-                defaultValue={info?.date} 
+                defaultValue={converDate(info?.date)} 
                 disabled>
         </input>
       </div>
