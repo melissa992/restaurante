@@ -75,6 +75,7 @@ export const Platos = () => {
                           className={ pageStyles.btn__del}>
                     <i className="fa fa-trash" aria-hidden="true"></i>
                   </button>
+                  
                 </div>
               </div>
             </div>

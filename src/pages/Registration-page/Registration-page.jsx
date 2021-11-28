@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import loginCSS from "../Login-page/Login-page.module.css";
 import jwt_decode from 'jwt-decode'
 
-export const Login = () => {
+export const Registration = () => {
 
   const [ID, setID] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState('');
   const history = useHistory()
 
   const handleSubmit = (e) => {
@@ -15,32 +16,27 @@ export const Login = () => {
     // console.log(ID,password);
   }
 
-  const veriIngreso = async () => {
-    if (ID.trim().length !== 0 && password.trim().length !== 0) {
+  const registro = async () => {
+    if (password !== confirmPassword) {
+      alert('Las contraseñas no son iguales')
+    } else {
       let tmp = {
-        correo: ID,
+        id: new Date().getTime(),
+        name: '',
+        role: 1,
+        userName: ID,
         password: password
       }
-      let url = 'http://127.0.0.1:4000/api/auth/ingresar'
+      let url = 'http://127.0.0.1:4000/api/auth/nuevo-usuario'
       await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(tmp)
       }).then(response => response.json())
-        .then(response => {
-          let token = response.token
-          localStorage.setItem('token', token)
-          let decoded = jwt_decode(token)
-          console.log(decoded)
-          if (decoded.role !== 0) {
-            history.push('/Inicio')
-          } else {
-            history.push('/DashboardAdmin')
-          }
-        })
+        .then(response => console.log(response))
         .catch(e => console.log(e))
-    } else {
-      console.log('Error')
+      history.push('/Ingresar')
+      alert('Usuario registrado correctamente')
     }
   }
 
@@ -53,12 +49,6 @@ export const Login = () => {
   //.then(response => console.log(response))
   //.catch(e => console.log(e))
   //}
-
-  const prueba = async () => {
-    const token = localStorage.getItem('token')
-    const decoded = jwt_decode(token)
-    console.log(decoded)
-  }
 
   return (
     <div className={loginCSS.login__container}>
@@ -81,9 +71,15 @@ export const Login = () => {
               required
             />
           </div>
-          <button onClick={veriIngreso} >Ingresar</button>
-          <button onClick={prueba} >Prueba</button>
-          <Link to='/Registro'><button>¿No tienes una cuenta?</button></Link>
+          <div className={loginCSS.input__block}>
+            <label>Confirmar contraseña:</label>
+            <input type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button onClick={registro} >Registrar</button>
         </form>
       </div>
     </div>

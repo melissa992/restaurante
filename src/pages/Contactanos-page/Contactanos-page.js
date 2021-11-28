@@ -3,10 +3,13 @@ import contactanos from "../Contactanos-page/Contactanos-page.module.css";
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
+import { useHistory } from "react-router";
 init("user_CeEuehQjrl8PKkAKrJKpA");
 
 export const ContactanosPage = () => {
 
+  let history = useHistory();
+  
   const selectList = [
     'Celebración de cumpleaños',
     'Aniversarios',
@@ -59,10 +62,7 @@ export const ContactanosPage = () => {
 
     emailjs.send('service_p8aor5o', 'template_83va4yz', emailBody).then(
       (val)=>{
-        Swal.fire({
-          text: 'Correo enviado correctamente',
-          icon: 'success'
-        })
+        crearReserva();
       },
       (err)=>{
         Swal.fire({
@@ -72,6 +72,43 @@ export const ContactanosPage = () => {
     
     )
   }
+
+  const crearReserva = ()=> {
+      let temp = {
+      id: new Date().getTime(),
+      typeService: event,
+      clientName: name,
+      email: email,
+      phone: phone,
+      date: date,
+      duration: hours,
+      numPerson: quantity,
+      indications: message,
+      status: 'enespera',
+    }
+
+    GuardarReserva(temp);
+    history.push("/Inicio");
+  }
+
+  const GuardarReserva = async(temp)=>{
+    let url = 'https://backendapicrud.herokuapp.com/api/solicitudes/guardar-solicitudes';
+    await fetch(url,{
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(temp)
+    })
+      .then( () => Swal.fire({
+        icon:'success',
+        text:'Reserva creada correctamente',
+        timer: 1500
+      }))
+      .catch( () => Swal.fire({
+        icon:'error',
+        text:'Error al crear reserva',
+        timer: 1500
+      }))
+  } 
 
   return (
     <section className={contactanos.contactanos__container}>
