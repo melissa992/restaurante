@@ -127,7 +127,7 @@ export const AppRouter = () => {
               return <Redirect to='/Inicio' />
             }
           }} />
-          <Route exact path="/AgregarServicio/:id" render={() => {
+          <Route exact path="/AgregarServicio" render={() => {
             if (localStorage.getItem('token') !== null) {
               const permission = jwt_decode(localStorage.getItem('token')).role === 0
               return permission ? <AgregarServicio /> : <Redirect to='/Inicio' />
