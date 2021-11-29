@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from 'react-router';
 import dashboard from "../Dashboard-admin-page/Dashboard-admin.module.css";
 
 export const DashboardAdmin = () => {
 
-  
+  let history = useHistory();
   
   return (
     <div className={dashboard.dashboard_container}>
@@ -50,6 +51,11 @@ export const DashboardAdmin = () => {
               Gestor de Servicios
             </div>
           </Link>
+        </div>
+        <div className={dashboard.card_container}>
+          <div className={dashboard.card} onClick={ ()=>{localStorage.clear(); history.push('/Ingresar') }}>
+            Cerrar Sesión
+          </div>
         </div>
       </div>
     </div>
