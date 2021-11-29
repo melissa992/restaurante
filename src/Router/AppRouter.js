@@ -33,6 +33,7 @@ import { EditarServicio } from "../pages/EditarServicio-page/EditarServicio-page
 import { DashboardClient } from "../pages/Dashboard-client-page/Dashboard-client";
 import { AgregarComentario } from "../pages/AgregarComentario-page/AgregarComentario";
 import { EditarReserva } from "../pages/EditarReserva/EditarReserva";
+import { ActualizarEmpleado } from "../pages/GestorEmpleados-page/ActualizarEmpleado";
 import { VerReservasCliente } from "../pages/VerReservasCliente/VerReservasCliente";
 import { NuevoEmpleado } from "../pages/GestorEmpleados-page/NuevoEmpleado";
 
@@ -78,6 +79,10 @@ export const AppRouter = () => {
           <Route exact path="/NuevoEmpleado" render={() => {
             const permission = jwt_decode(localStorage.getItem('token')).role === 0
             return permission ? <NuevoEmpleado /> : <Redirect to='/Inicio' />
+          }} />
+          <Route exact path="/ActualizarEmpleado/:id" render={() => {
+            const permission = jwt_decode(localStorage.getItem('token')).role === 0
+            return permission ? <ActualizarEmpleado /> : <Redirect to='/Inicio' />
           }} />
 
           <Redirect to="/Inicio" />

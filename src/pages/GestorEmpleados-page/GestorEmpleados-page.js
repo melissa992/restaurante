@@ -26,9 +26,6 @@ export const Empleados = () => {
 
   return (
     <div className="container">
-      <div>
-        <ActualizarEmpleado />
-      </div>
       {empleados.map(empleado => <ShowEmployees empleado={empleado} getEmployees={getEmployees} />)}
       <Link to='/NuevoEmpleado'><button>Nuevo Empleado</button></Link>
     </div>
