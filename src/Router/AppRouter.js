@@ -1,4 +1,5 @@
 import React from "react";
+import jwt_decode from 'jwt-decode'
 import {
   BrowserRouter as Router,
   Switch,
@@ -52,7 +53,10 @@ export const AppRouter = () => {
           <Route exact path="/Confirmar-Compra" component={Formulario} />
           <Route exact path="/Ingresar" component={Login} />
           <Route exact path="/Registro" component={Registration} />
-          <Route exact path="/DashboardAdmin" component={DashboardAdmin} />
+          <Route exact path="/DashboardAdmin" render={() => {
+            const permission = jwt_decode(localStorage.getItem('token')).role === 0
+            return permission ? <DashboardAdmin /> : <Redirect to='/Inicio' />
+          }} />
           <Route exact path="/InfoRestaurante" component={InfoRestaurante} />
           <Route exact path="/Empleados" component={Empleados} />
           <Route exact path="/Comentarios" component={Comentario} />
@@ -65,8 +69,8 @@ export const AppRouter = () => {
           <Route exact path="/EditarServicio/:id" component={EditarServicio} />
           <Route exact path="/DashboardClient" component={DashboardClient} />
           <Route exact path="/AgregarComentario" component={AgregarComentario} />
-          <Route exact path="/EditarReserva/:id" component={ EditarReserva}/>
-          <Route exact path="/VerReservasCliente" component={ VerReservasCliente }/>
+          <Route exact path="/EditarReserva/:id" component={EditarReserva} />
+          <Route exact path="/VerReservasCliente" component={VerReservasCliente} />
 
 
           <Redirect to="/Inicio" />

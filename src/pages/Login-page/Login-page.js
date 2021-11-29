@@ -28,14 +28,17 @@ export const Login = () => {
         body: JSON.stringify(tmp)
       }).then(response => response.json())
         .then(response => {
-          let token = response.token
-          localStorage.setItem('token', token)
-          let decoded = jwt_decode(token)
-          console.log(decoded)
-          if (decoded.role !== 0) {
-            history.push('/DashboardClient')
+          if (response.ok === true) {
+            let token = response.token
+            localStorage.setItem('token', token)
+            let decoded = jwt_decode(token)
+            if (decoded.role !== 0) {
+              history.push('/DashboardClient')
+            } else {
+              history.push('/DashboardAdmin')
+            }
           } else {
-            history.push('/DashboardAdmin')
+            alert(response.msg)
           }
         })
         .catch(e => console.log(e))
@@ -53,12 +56,6 @@ export const Login = () => {
   //.then(response => console.log(response))
   //.catch(e => console.log(e))
   //}
-
-  const prueba = async () => {
-    const token = localStorage.getItem('token')
-    const decoded = jwt_decode(token)
-    console.log(decoded)
-  }
 
   return (
     <div className={loginCSS.login__container}>
@@ -82,7 +79,6 @@ export const Login = () => {
             />
           </div>
           <button onClick={veriIngreso} >Ingresar</button>
-          <button onClick={prueba} >Prueba</button>
           <Link to='/Registro'><button>¿No tienes una cuenta?</button></Link>
         </form>
       </div>
