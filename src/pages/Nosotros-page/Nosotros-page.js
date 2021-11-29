@@ -45,7 +45,7 @@ export const NosotrosPage = () => {
       </div>
       <div className={ nosotros.empleados } id="COLABORADORES">
         {
-          empleados.map( (info, index) => {
+          empleados?.map( (info, index) => {
             return <Collaborator key={index} value={info}/>
           })
         }
