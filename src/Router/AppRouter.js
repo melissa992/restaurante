@@ -56,72 +56,140 @@ export const AppRouter = () => {
           <Route exact path="/Ingresar" component={Login} />
           <Route exact path="/Registro" component={Registration} />
           <Route exact path="/DashboardAdmin" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <DashboardAdmin /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <DashboardAdmin /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/InfoRestaurante" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <InfoRestaurante /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <InfoRestaurante /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/Empleados" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <Empleados /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <Empleados /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/Comentarios" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <Comentario /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <Comentario /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/Platos" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <Platos /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <Platos /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/Reservas" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <Reservas /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <Reservas /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/VerServicios" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <Servicios /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <Servicios /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/AgregarPlato" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <AgregarPlato /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <AgregarPlato /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/EditarPlato/:id" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <EditarPlato /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <EditarPlato /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/AgregarServicio/:id" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <AgregarServicio /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <AgregarServicio /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/EditarServicio/:id" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <EditarServicio /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <EditarServicio /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/DashboardClient" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 1
-            return permission ? <DashboardClient /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 1
+              return permission ? <DashboardClient /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/AgregarComentario" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 1
-            return permission ? <AgregarComentario /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 1
+              return permission ? <AgregarComentario /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/EditarReserva/:id" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <EditarReserva /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <EditarReserva /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/VerReservasCliente" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 1
-            return permission ? <VerReservasCliente /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 1
+              return permission ? <VerReservasCliente /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/NuevoEmpleado" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <NuevoEmpleado /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <NuevoEmpleado /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
           <Route exact path="/ActualizarEmpleado/:id" render={() => {
-            const permission = jwt_decode(localStorage.getItem('token')).role === 0
-            return permission ? <ActualizarEmpleado /> : <Redirect to='/Inicio' />
+            if (localStorage.getItem('token') !== null) {
+              const permission = jwt_decode(localStorage.getItem('token')).role === 0
+              return permission ? <ActualizarEmpleado /> : <Redirect to='/Inicio' />
+            } else {
+              return <Redirect to='/Inicio' />
+            }
           }} />
 
           <Redirect to="/Inicio" />
