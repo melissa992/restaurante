@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import jwtDecode from 'jwt-decode';
 
 export const AgregarComentario = () => {
-  console.log(jwtDecode(localStorage.getItem('token')));
   let history = useHistory();
   const [description, setDescription] = useState("");
 

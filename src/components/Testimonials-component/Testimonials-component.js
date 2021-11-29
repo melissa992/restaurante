@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import testimonial from "../Testimonials-component/Testimonials-component.module.css";
 import { testimonials } from "../../assets/data/testimonials";
 import { Testimonial } from "../Testimonial-component/Testimonial-component";
+import { useState } from "react/cjs/react.development";
 
 export const Testimonials = ()=> {
 
+  const [info, setInfo] = useState();
 
+  useEffect(() => {
+    fetchData();
+  },[]);
+
+
+  const fetchData = async()=>{
+    let url = 'https://backendapicrud.herokuapp.com/api/comentarios/ver-comentarios-email';
+    await fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setInfo(data.info);
+      })
+      .catch( () => {})
+  }
 
   function toLeft(){
     let slider = document.querySelector('#slider');
@@ -40,7 +56,7 @@ export const Testimonials = ()=> {
       <div  className={testimonial.slider } 
             id="slider">
         {
-          testimonials.map( (value, index) => {
+          info?.map( (value, index) => {
             return (
               <Testimonial key={ index } 
                           info={ value }/>

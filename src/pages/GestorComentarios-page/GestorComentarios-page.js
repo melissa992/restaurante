@@ -7,7 +7,6 @@ import swal from 'sweetalert2';
 
 
 export const Comentario = () => {
-  let history = useHistory();
   const [comentarioEliminado, setComentarioEliminado] = useState(false)
   const [info, setInfo] = useState();
 
@@ -23,7 +22,6 @@ export const Comentario = () => {
       .then(data => {
         setInfo(data.info);
         setComentarioEliminado(false);
-        console.log(data.info)
       })
       .catch( () => {})
   }
@@ -57,6 +55,7 @@ export const Comentario = () => {
           info?.map( (dish,index) => {
             
             return <div key={index} className={pageStyles.dish}>
+              <img src={dish?.img} alt={dish?.name}></img>
               <div className={ pageStyles.dish__content}>
                 <h2>{dish?.email}</h2>
                 <small>{dish?.comment}</small>

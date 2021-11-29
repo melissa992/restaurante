@@ -10,11 +10,11 @@ export const Testimonial = ( { info })=> {
   return (
     <div className={ testimonial.testimonial}>
       <div className={ testimonial.profile }>
-        <img src={ img[info.img] } alt={ info.name }/>
+        <img src={ info.img } alt={ info.email }/>
       </div>
       <blockquote className={ testimonial.quote }>
-        {info.text}
-      <cite><b>{ info.name }</b></cite>
+        {info.comment}
+      <cite><b>{ info.email }</b></cite>
       </blockquote>
     </div>
   )
