@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import jwtDecode from 'jwt-decode';
 
 export const AgregarComentario = () => {
-
+  console.log(jwtDecode(localStorage.getItem('token')));
   let history = useHistory();
   const [description, setDescription] = useState("");
 
@@ -14,11 +14,11 @@ export const AgregarComentario = () => {
     if((description.trim().length !== 0)){
       if(localStorage.getItem('token')){
         let info = jwtDecode(localStorage.getItem('token'));
-
         let temp = {
           id: new Date().getTime(),
           comment: description,
-          clientID: info.userId
+          clientID: info.userId,
+          email: info.email
         }
 
         GuardarComentario(temp);
