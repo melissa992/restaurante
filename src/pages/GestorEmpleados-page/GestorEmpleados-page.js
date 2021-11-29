@@ -8,7 +8,7 @@ export const Empleados = () => {
   const [empleados, setEmpleados] = useState([])
 
   const getEmployees = async () => {
-    let url = 'http://127.0.0.1:4000/api/empleados/ver-empleados'
+    let url = 'https://backendapicrud.herokuapp.com/api/empleados/ver-empleados'
     await fetch(url, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
@@ -22,6 +22,8 @@ export const Empleados = () => {
   useEffect(() => {
     getEmployees()
   }, [])
+
+  console.log(empleados)
 
   return (
     <div className={GestorEmpleadosStyles.container}>

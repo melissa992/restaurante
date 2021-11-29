@@ -12,7 +12,7 @@ export const ActualizarEmpleado = (props) => {
   const [descripcion, setDescripcion] = useState('')
 
   const getData = async () => {
-    const url = `http://127.0.0.1:4000/api/empleados/ver-empleado/${id}`
+    const url = `https://backendapicrud.herokuapp.com/api/empleados/ver-empleado/${id}`
     await fetch(url, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' }
@@ -28,12 +28,8 @@ export const ActualizarEmpleado = (props) => {
     getData()
   }, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  }
-
   const updateEmployee = async () => {
-    const url = `http://127.0.0.1:4000/api/empleados/editar-empleado/${id}`
+    const url = `https://backendapicrud.herokuapp.com/api/empleados/editar-empleado/${id}`
     const tmp = {
       name: nombre,
       description: descripcion
@@ -61,8 +57,8 @@ export const ActualizarEmpleado = (props) => {
         </label>
         <input className={GestorEmpleadosStyles.form__input}
           type="text"
-          defaultValue={nombre}
-          disabled>
+          onChange={e => setNombre(e.target.value)}
+          defaultValue={nombre}>
         </input>
       </div>
 
@@ -72,8 +68,8 @@ export const ActualizarEmpleado = (props) => {
         </label>
         <input className={GestorEmpleadosStyles.form__input}
           type="text"
-          defaultValue={descripcion}
-          disabled>
+          onChange={e => setDescripcion(e.target.value)}
+          defaultValue={descripcion}>
         </input>
       </div>
 

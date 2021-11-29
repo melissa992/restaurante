@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import jwt_decode from 'jwt-decode'
-import loginCSS from './GestorEmpleados-page.module.css'
+import GestorEmpleadosStyles from './GestorEmpleados-page.module.css'
 import { useHistory } from 'react-router-dom'
 
 export const NuevoEmpleado = () => {
@@ -10,12 +10,8 @@ export const NuevoEmpleado = () => {
 
   const history = useHistory()
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  }
-
   const registrarNuevoEmpleado = async () => {
-    const url = `http://127.0.0.1:4000/api/empleados/nuevo-empleado`
+    const url = `https://backendapicrud.herokuapp.com/api/empleados/nuevo-empleado`
     const tmp = {
       id: new Date().getTime(),
       name: nombre,
@@ -34,28 +30,35 @@ export const NuevoEmpleado = () => {
   }
 
   return (
-    <div className={loginCSS.login__container}>
-      <div className={loginCSS.login}>
-        <i className="fas fa-user-circle"></i>
-        <form onSubmit={handleSubmit}>
-          <div className={loginCSS.input__block}>
-            <label>Nombre del nuevo empleado:</label>
-            <input type="text"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              required
-            />
-          </div>
-          <div className={loginCSS.input__block}>
-            <label>Descripción:</label>
-            <input type="text"
-              value={descripcion}
-              onChange={(e) => setDescripcion(e.target.value)}
-              required
-            />
-          </div>
-          <button onClick={registrarNuevoEmpleado} >Registrar al nuevo empleado</button>
-        </form>
+    <div className={GestorEmpleadosStyles.container}>
+      <h1 className={GestorEmpleadosStyles.container__title}>
+        Agregar Empleado
+      </h1>
+      <div className={GestorEmpleadosStyles.form__block}>
+        <label className={GestorEmpleadosStyles.form__label}>
+          Nombre del nuevo empleado:
+        </label>
+        <input className={GestorEmpleadosStyles.form__input}
+          type="text"
+          onChange={e => setNombre(e.target.value)}
+          defaultValue={nombre}>
+        </input>
+      </div>
+
+      <div className={GestorEmpleadosStyles.form__block}>
+        <label className={GestorEmpleadosStyles.form__label}>
+          Descripción:
+        </label>
+        <input className={GestorEmpleadosStyles.form__input}
+          type="text"
+          onChange={e => setDescripcion(e.target.value)}
+          defaultValue={descripcion}>
+        </input>
+      </div>
+
+      <div className={GestorEmpleadosStyles.container__btns}>
+        <button className={GestorEmpleadosStyles.btn__edit}
+          onClick={() => registrarNuevoEmpleado()}>Registrar al nuevo empleado</button>
       </div>
     </div>
   )

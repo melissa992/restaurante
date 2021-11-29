@@ -8,7 +8,7 @@ const ShowEmployees = (props) => {
   const history = useHistory()
 
   const deleteEmployee = async () => {
-    const url = `http://127.0.0.1:4000/api/empleados/eliminar-empleado/${empleado._id}`
+    const url = `https://backendapicrud.herokuapp.com/api/empleados/eliminar-empleado/${empleado._id}`
     const tmp = { token: localStorage.getItem('token') }
     await fetch(url, {
       method: 'DELETE',
