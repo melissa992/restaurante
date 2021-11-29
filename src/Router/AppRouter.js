@@ -34,6 +34,7 @@ import { DashboardClient } from "../pages/Dashboard-client-page/Dashboard-client
 import { AgregarComentario } from "../pages/AgregarComentario-page/AgregarComentario";
 import { EditarReserva } from "../pages/EditarReserva/EditarReserva";
 import { VerReservasCliente } from "../pages/VerReservasCliente/VerReservasCliente";
+import { NuevoEmpleado } from "../pages/GestorEmpleados-page/NuevoEmpleado";
 
 export const AppRouter = () => {
   return (
@@ -67,11 +68,17 @@ export const AppRouter = () => {
           <Route exact path="/EditarPlato/:id" component={EditarPlato} />
           <Route exact path="/AgregarServicio" component={AgregarServicio} />
           <Route exact path="/EditarServicio/:id" component={EditarServicio} />
-          <Route exact path="/DashboardClient" component={DashboardClient} />
+          <Route exact path="/DashboardClient" render={() => {
+            const permission = jwt_decode(localStorage.getItem('token')).role === 1
+            return permission ? <DashboardClient /> : <Redirect to='/Inicio' />
+          }} />
           <Route exact path="/AgregarComentario" component={AgregarComentario} />
           <Route exact path="/EditarReserva/:id" component={EditarReserva} />
           <Route exact path="/VerReservasCliente" component={VerReservasCliente} />
-
+          <Route exact path="/NuevoEmpleado" render={() => {
+            const permission = jwt_decode(localStorage.getItem('token')).role === 0
+            return permission ? <NuevoEmpleado /> : <Redirect to='/Inicio' />
+          }} />
 
           <Redirect to="/Inicio" />
         </Switch>
