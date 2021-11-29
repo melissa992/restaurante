@@ -18,9 +18,9 @@ export const AgregarComentario = () => {
           id: new Date().getTime(),
           comment: description,
           clientID: info.userId,
-          email: info.email
+          email: info.email,
+          img: info.image
         }
-
         GuardarComentario(temp);
         history.push("/DashboardClient");
       }
@@ -28,7 +28,7 @@ export const AgregarComentario = () => {
   }
 
   const GuardarComentario = async(temp)=>{
-    let url = 'https://backendapicrud.herokuapp.com/api/comentarios/nuevo-comentario';
+    let url = 'http://127.0.0.1:4000/api/comentarios/nuevo-comentario';
     await fetch(url,{
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -61,7 +61,7 @@ export const AgregarComentario = () => {
                 onChange={(e) => setDescription(e.target.value)}></input>
       </div>
       <button className={ pageStyles.button}
-              onClick={ CrearCommentario }>agregar un plato</button>
+              onClick={ CrearCommentario }>agregar un comentario</button>
     </div>
   )
 }
