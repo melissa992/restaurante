@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ShowEmployees from './ShowEmployees'
 import { Link } from 'react-router-dom'
+import { ActualizarEmpleado } from './ActualizarEmpleado'
 import dashboard from "../GestorEmpleados-page/GestorEmpleados-page.module.css";
 
 export const Empleados = () => {
@@ -24,7 +25,10 @@ export const Empleados = () => {
   }, [])
 
   return (
-    <div class="container">
+    <div className="container">
+      <div>
+        <ActualizarEmpleado />
+      </div>
       {empleados.map(empleado => <ShowEmployees empleado={empleado} getEmployees={getEmployees} />)}
       <Link to='/NuevoEmpleado'><button>Nuevo Empleado</button></Link>
     </div>
