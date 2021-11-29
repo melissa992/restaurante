@@ -66,7 +66,10 @@ export const AppRouter = () => {
             return permission ? <Comentario /> : <Redirect to='/Inicio' />
           }} />
           <Route exact path="/Platos" component={Platos} />
-          <Route exact path="/Reservas" component={Reservas} />
+          <Route exact path="/Reservas" render={() => {
+            const permission = jwt_decode(localStorage.getItem('token')).role === 0
+            return permission ? <Reservas /> : <Redirect to='/Inicio' />
+          }} />
           <Route exact path="/VerServicios" component={Servicios} />
           <Route exact path="/AgregarPlato" component={AgregarPlato} />
           <Route exact path="/EditarPlato/:id" component={EditarPlato} />
