@@ -28,7 +28,7 @@ export const AgregarComentario = () => {
   }
 
   const GuardarComentario = async(temp)=>{
-    let url = 'http://127.0.0.1:4000/api/comentarios/nuevo-comentario';
+    let url = 'https://backendapicrud.herokuapp.com/api/comentarios/nuevo-comentario';
     await fetch(url,{
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
