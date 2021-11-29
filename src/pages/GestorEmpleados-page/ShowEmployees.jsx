@@ -4,7 +4,7 @@ import GestorEmpleadosStyles from './GestorEmpleados-page.module.css'
 
 const ShowEmployees = (props) => {
 
-  const { empleado, getEmployees } = props
+  const { index, empleado, getEmployees } = props
   const history = useHistory()
 
   const deleteEmployee = async () => {
@@ -23,14 +23,21 @@ const ShowEmployees = (props) => {
   }
 
   return (
-    <div className={GestorEmpleadosStyles.plateItem}>
-
-      <img className={GestorEmpleadosStyles.empleado_img} src='#' width="250" alt="" />
-      <h3 className={GestorEmpleadosStyles.empleado_name}>{empleado.name}</h3>
-      <button className={GestorEmpleadosStyles.borrar} onClick={deleteEmployee} ><i className="fa fa-trash" aria-hidden="true"></i></button>
-      <button className={GestorEmpleadosStyles.editar} onClick={() => history.push(`/ActualizarEmpleado/${empleado.id}`)} ><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-      <p className={GestorEmpleadosStyles.empleado_description}>{empleado.description}</p>
-
+    <div key={index} className={GestorEmpleadosStyles.empleado}>
+      <div className={GestorEmpleadosStyles.empleado__content}>
+        <h2>{empleado.name}</h2>
+        <h3>{empleado.description}</h3>
+        <div className={GestorEmpleadosStyles.container__btns}>
+          <button onClick={deleteEmployee}
+            className={GestorEmpleadosStyles.btn__del}>
+            <i className="fa fa-trash" aria-hidden="true"></i>
+          </button>
+          <button className={GestorEmpleadosStyles.btn__edit}
+            onClick={() => history.push(`/ActualizarEmpleado/${empleado.id}`)}>
+            <i className="fas fa-edit"></i>
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

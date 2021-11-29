@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ShowEmployees from './ShowEmployees'
 import { Link } from 'react-router-dom'
-import { ActualizarEmpleado } from './ActualizarEmpleado'
-import dashboard from "../GestorEmpleados-page/GestorEmpleados-page.module.css";
+import GestorEmpleadosStyles from "../GestorEmpleados-page/GestorEmpleados-page.module.css";
 
 export const Empleados = () => {
 
@@ -25,9 +24,10 @@ export const Empleados = () => {
   }, [])
 
   return (
-    <div className="container">
-      {empleados.map(empleado => <ShowEmployees empleado={empleado} getEmployees={getEmployees} />)}
-      <Link to='/NuevoEmpleado'><button>Nuevo Empleado</button></Link>
+    <div className={GestorEmpleadosStyles.container}>
+      <h1 className={GestorEmpleadosStyles.container__title}>Gestor Empleados</h1>
+      {empleados.map((empleado, index) => <ShowEmployees empleado={empleado} getEmployees={getEmployees} />)}
+      <Link to='/NuevoEmpleado'><button className={GestorEmpleadosStyles.nuevo_empleado}>Nuevo Empleado</button></Link>
     </div>
   )
 }

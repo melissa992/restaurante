@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import loginCSS from './GestorEmpleados-page.module.css'
+import GestorEmpleadosStyles from './GestorEmpleados-page.module.css'
 
 export const ActualizarEmpleado = (props) => {
 
@@ -51,28 +51,35 @@ export const ActualizarEmpleado = (props) => {
   }
 
   return (
-    <div className={loginCSS.login__container}>
-      <div className={loginCSS.login}>
-        <i className="fas fa-user-circle"></i>
-        <form onSubmit={handleSubmit}>
-          <div className={loginCSS.input__block}>
-            <label>Nombre del empleado:</label>
-            <input type="text"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              required
-            />
-          </div>
-          <div className={loginCSS.input__block}>
-            <label>Descripción:</label>
-            <input type="text"
-              value={descripcion}
-              onChange={(e) => setDescripcion(e.target.value)}
-              required
-            />
-          </div>
-          <button onClick={updateEmployee} >Guardar los cambios</button>
-        </form>
+    <div className={GestorEmpleadosStyles.container}>
+      <h1 className={GestorEmpleadosStyles.container__title}>
+        Actulaizar Empleado
+      </h1>
+      <div className={GestorEmpleadosStyles.form__block}>
+        <label className={GestorEmpleadosStyles.form__label}>
+          Nombre:
+        </label>
+        <input className={GestorEmpleadosStyles.form__input}
+          type="text"
+          defaultValue={nombre}
+          disabled>
+        </input>
+      </div>
+
+      <div className={GestorEmpleadosStyles.form__block}>
+        <label className={GestorEmpleadosStyles.form__label}>
+          Descripción:
+        </label>
+        <input className={GestorEmpleadosStyles.form__input}
+          type="text"
+          defaultValue={descripcion}
+          disabled>
+        </input>
+      </div>
+
+      <div className={GestorEmpleadosStyles.container__btns}>
+        <button className={GestorEmpleadosStyles.btn__edit}
+          onClick={() => updateEmployee()}>Guardar</button>
       </div>
     </div>
   )
