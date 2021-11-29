@@ -61,7 +61,10 @@ export const AppRouter = () => {
           }} />
           <Route exact path="/InfoRestaurante" component={InfoRestaurante} />
           <Route exact path="/Empleados" component={Empleados} />
-          <Route exact path="/Comentarios" component={Comentario} />
+          <Route exact path="/Comentarios" render={() => {
+            const permission = jwt_decode(localStorage.getItem('token')).role === 0
+            return permission ? <Comentario /> : <Redirect to='/Inicio' />
+          }} />
           <Route exact path="/Platos" component={Platos} />
           <Route exact path="/Reservas" component={Reservas} />
           <Route exact path="/VerServicios" component={Servicios} />
