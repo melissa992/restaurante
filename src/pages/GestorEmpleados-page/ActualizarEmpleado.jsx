@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
-import GestorEmpleadosStyles from './GestorEmpleados-page.module.css'
+import React, { useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import GestorEmpleadosStyles from './GestorEmpleados-page.module.css';
+
 
 export const ActualizarEmpleado = (props) => {
 
@@ -8,8 +10,10 @@ export const ActualizarEmpleado = (props) => {
 
   const { id } = useParams()
 
-  const [nombre, setNombre] = useState('')
-  const [descripcion, setDescripcion] = useState('')
+  const [nombre, setNombre] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const [image, setImage] = useState('');
+
 
   const getData = async () => {
     const url = `https://backendapicrud.herokuapp.com/api/empleados/ver-empleado/${id}`
@@ -20,6 +24,7 @@ export const ActualizarEmpleado = (props) => {
       .then(res => {
         setNombre(res.empleado.name)
         setDescripcion(res.empleado.description)
+        setImage(res.empleado.image)
       })
       .catch(e => console.log(e))
   }
@@ -32,7 +37,8 @@ export const ActualizarEmpleado = (props) => {
     const url = `https://backendapicrud.herokuapp.com/api/empleados/editar-empleado/${id}`
     const tmp = {
       name: nombre,
-      description: descripcion
+      description: descripcion,
+      image: image
     }
     await fetch(url, {
       method: 'PUT',
@@ -40,17 +46,28 @@ export const ActualizarEmpleado = (props) => {
       body: JSON.stringify(tmp)
     }).then(res => res.json())
       .then(res => {
-        console.log(res)
+        Swal.fire({
+          icon:'success',
+          text:'Actualizado correctamente',
+          timer: 1500
+        })
       })
-      .catch(e => console.log(e))
+      .catch(() => Swal.fire({
+        icon:'success',
+        text:'Error al actualizar',
+        timer: 1500
+      }))
     history.push('/Empleados')
   }
 
   return (
     <div className={GestorEmpleadosStyles.container}>
       <h1 className={GestorEmpleadosStyles.container__title}>
-        Actulaizar Empleado
+        Actualizar Empleado
       </h1>
+      <div className={GestorEmpleadosStyles.form__block}>
+        <img src={image} alt={nombre}></img>
+      </div>
       <div className={GestorEmpleadosStyles.form__block}>
         <label className={GestorEmpleadosStyles.form__label}>
           Nombre:
@@ -70,6 +87,17 @@ export const ActualizarEmpleado = (props) => {
           type="text"
           onChange={e => setDescripcion(e.target.value)}
           defaultValue={descripcion}>
+        </input>
+      </div>
+
+      <div className={GestorEmpleadosStyles.form__block}>
+        <label className={GestorEmpleadosStyles.form__label}>
+          Imagen:
+        </label>
+        <input className={GestorEmpleadosStyles.form__input}
+          type="url"
+          onChange={e => setImage(e.target.value)}
+          defaultValue={image}>
         </input>
       </div>
 

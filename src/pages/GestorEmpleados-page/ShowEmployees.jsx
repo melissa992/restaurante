@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import GestorEmpleadosStyles from './GestorEmpleados-page.module.css'
+import GestorEmpleadosStyles from './GestorEmpleados-page.module.css';
+import Swal from 'sweetalert2';
 
 const ShowEmployees = (props) => {
 
@@ -15,15 +16,20 @@ const ShowEmployees = (props) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(tmp)
     }).then(response => response.json())
-      .then(response => {
-        console.log(response)
+      .then(() => {
+        Swal.fire({
+          icon:'success',
+          text:'Eliminado correctamente',
+          timer: 1500
+        })
         getEmployees()
       })
-      .catch(e => console.log(e))
+      .catch(() => Swal.fire({icon:'error',text:'Error al eliminar el empleado',timer: 1500}))
   }
 
   return (
     <div key={index} className={GestorEmpleadosStyles.empleado}>
+      <img src={empleado.image} alt={empleado.name} width="200" height="200"></img>
       <div className={GestorEmpleadosStyles.empleado__content}>
         <h2>{empleado.name}</h2>
         <h3>{empleado.description}</h3>

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import loginCSS from "../Login-page/Login-page.module.css";
+import Swal from "sweetalert2";
 
 export const Registration = () => {
 
   const [ID, setID] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const history = useHistory()
 
   const handleSubmit = (e) => {
@@ -17,16 +20,21 @@ export const Registration = () => {
 
   const registro = async () => {
     if (password !== confirmPassword) {
-      alert('Las contraseñas no son iguales')
+      Swal.fire({
+        icon:'error',
+        text:'Las contraseñas no son iguales',
+        timer: 1500
+      })
     } else {
       let tmp = {
         id: new Date().getTime(),
-        name: '',
+        name: name,
         role: 1,
         userName: ID,
-        password: password
+        password: password,
+        email: email
       }
-      let url = 'http://127.0.0.1:4000/api/auth/nuevo-usuario'
+      let url = 'https://backendapicrud.herokuapp.com/api/auth/nuevo-usuario'
       await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -35,7 +43,11 @@ export const Registration = () => {
         .then(response => console.log(response))
         .catch(e => console.log(e))
       history.push('/Ingresar')
-      alert('Usuario registrado correctamente')
+      Swal.fire({
+        icon:'success',
+        text:'Usuario registrado correctamente',
+        timer: 1500
+      })
     }
   }
 
@@ -54,6 +66,22 @@ export const Registration = () => {
       <div className={loginCSS.login}>
         <i className="fas fa-user-circle"></i>
         <form onSubmit={handleSubmit}>
+          <div className={loginCSS.input__block}>
+            <label>Nombre:</label>
+            <input type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className={loginCSS.input__block}>
+            <label>Correo:</label>
+            <input type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
           <div className={loginCSS.input__block}>
             <label>Nombre de usuario:</label>
             <input type="text"

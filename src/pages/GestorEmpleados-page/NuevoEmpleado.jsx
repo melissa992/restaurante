@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import jwt_decode from 'jwt-decode'
-import GestorEmpleadosStyles from './GestorEmpleados-page.module.css'
-import { useHistory } from 'react-router-dom'
+import React, { useState } from 'react';
+import GestorEmpleadosStyles from './GestorEmpleados-page.module.css';
+import { useHistory } from 'react-router-dom';
 
 export const NuevoEmpleado = () => {
 
-  const [nombre, setNombre] = useState('')
-  const [descripcion, setDescripcion] = useState('')
+  const [nombre, setNombre] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const [image, setImage] = useState('');
 
   const history = useHistory()
 
@@ -15,7 +15,8 @@ export const NuevoEmpleado = () => {
     const tmp = {
       id: new Date().getTime(),
       name: nombre,
-      description: descripcion
+      description: descripcion,
+      image: image
     }
     await fetch(url, {
       method: 'POST',
@@ -34,6 +35,9 @@ export const NuevoEmpleado = () => {
       <h1 className={GestorEmpleadosStyles.container__title}>
         Agregar Empleado
       </h1>
+      <div  className={GestorEmpleadosStyles.form__block}>
+        <img src={image} alt={nombre}></img>
+      </div>
       <div className={GestorEmpleadosStyles.form__block}>
         <label className={GestorEmpleadosStyles.form__label}>
           Nombre del nuevo empleado:
@@ -53,6 +57,17 @@ export const NuevoEmpleado = () => {
           type="text"
           onChange={e => setDescripcion(e.target.value)}
           defaultValue={descripcion}>
+        </input>
+      </div>
+
+      <div className={GestorEmpleadosStyles.form__block}>
+        <label className={GestorEmpleadosStyles.form__label}>
+          Imagen:
+        </label>
+        <input className={GestorEmpleadosStyles.form__input}
+          type="url"
+          onChange={e => setImage(e.target.value)}
+          defaultValue={image}>
         </input>
       </div>
 
