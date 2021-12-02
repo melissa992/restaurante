@@ -37,8 +37,8 @@ export const NosotrosPage = () => {
               className={ nosotros.historia_imagen} alt="..."/>
           <div className={ nosotros.margenes_history}>
             <div  className={ nosotros.title} id="HISTORIA">
-              <h4 >Nuestra</h4>
-              <h2 className={ nosotros.subtitle}>Historia</h2>
+              
+              <h2 className={ nosotros.subtitle}>Nosotros</h2>
             </div>
             <p>{info?.history}</p>
           </div>

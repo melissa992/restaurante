@@ -35,7 +35,7 @@ export const FooterComponent = ()=> {
           <span className={ footerStyle.email }>{info?.email}</span>
           <span className={ footerStyle.phone }>{info?.phone}</span>
 
-          <span className={ footerStyle.copy }> &copy; Copyright 2020.</span>
+          <span className={ footerStyle.copy }> &copy; Copyright 2021.</span>
         </div>
       </div>
       <div className={ footerStyle.footer_mapa}>

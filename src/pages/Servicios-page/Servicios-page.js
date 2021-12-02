@@ -26,23 +26,13 @@ export const ServiciosPage = () => {
 
       <div class="row">
         <div class="col-md-6">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis fuga nam sit ad quasi facilis cum.
-            Eligendi, fuga assumenda. Illum obcaecati natus qui vero commodi pariatur et incidunt soluta ducimus?
-            <br/><br/>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis fuga nam sit ad quasi facilis cum.
-          Eligendi, fuga assumenda. Illum obcaecati natus qui vero commodi pariatur et incidunt soluta ducimus?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis fuga nam sit ad quasi facilis cum.
-          Eligendi, fuga assumenda. Illum obcaecati natus qui vero commodi pariatur et incidunt soluta ducimus?</p>
+         
 
         </div>
 
         <div class="col-md-6">
           
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis fuga nam sit ad quasi facilis cum.
-            Eligendi, fuga assumenda. Illum obcaecati natus qui vero commodi pariatur et incidunt soluta ducimus?
-            <br/><br/>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis fuga nam sit ad quasi facilis cum.
-            Eligendi, fuga assumenda. Illum obcaecati natus qui vero commodi pariatur et incidunt soluta ducimus? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis fuga nam sit ad quasi facilis cum.
-            Eligendi, fuga assumenda. Illum obcaecati natus qui vero commodi pariatur et incidunt soluta ducimus?</p>
+          
         </div>
       </div>
 

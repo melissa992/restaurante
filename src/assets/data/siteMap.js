@@ -68,11 +68,11 @@ export const siteMap = [
         url: '/Servicios#LISTA_SERVICIOS'
       },
       {
-        title: 'FIESTAS INFANTILES',
+        title: 'FIESTAS DE NIÑOS',
         url: '/Servicios#LISTA_SERVICIOS'
       },
       {
-        title: 'DECLARACIONES O PROPUESTAS',
+        title: 'DECLARACIONES y PROPUESTAS',
         url: '/Servicios#LISTA_SERVICIOS'
       },
       {

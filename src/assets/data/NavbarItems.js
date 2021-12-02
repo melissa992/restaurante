@@ -2,25 +2,31 @@ export const NavItems = [
   {
     id: 1,
     url: '/Nosotros',
-    iconClass: 'fas fa-address-card',
+  
     text: 'Nosotros'
   },
   {
     id: 2,
     url: '/Menu',
-    iconClass: 'fas fa-clipboard-list',
+    
     text: 'Menú'
   },
   {
     id: 3,
     url: '/Servicios',
-    iconClass: 'far fa-list-alt',
+  
     text: 'Servicios'
   },
   {
     id: 4,
     url: '/Contactanos',
-    iconClass: 'far fa-calendar-check',
+   
+    text: 'Contactenos'
+  },
+  {
+    id: 4,
+    url: '/Contactanos',
+   
     text: 'Reservas'
   },
   {

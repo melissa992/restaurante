@@ -23,7 +23,7 @@ export const Carousel = ()=>{
                   alt="IMG1" />
             <div className={ carousel.slide__content}>
               <img src={ logo } alt="logo restaurante"/>
-              <p>Sabores que <span>exaltan</span> tus sentidos</p>
+              
             </div>
           </div>
 
@@ -33,9 +33,9 @@ export const Carousel = ()=>{
                   alt="slide 2" />
             <div className={ carousel.slide__content}>
               <img src={ logo } alt="logo restaurante" />
-              <p>Un <span>mundo</span> de posibilidades</p>
+             
               <Link to="/menu">
-                Ir al menu
+                menu
               </Link>
             </div>
           </div>
@@ -45,8 +45,8 @@ export const Carousel = ()=>{
                   className="d-block w-100 carousel_img" alt="..."/>
             <div className={ carousel.slide__content}>
               <img src={ logo } alt="logo restaurante" />
-              <p>Viernes descuento del <span>50%</span> en recomendaciones del chef</p>
-              <small>Realiza tu reserva ya</small>
+              
+              <small>Realiza tu reserva </small>
               <Link to="/Contactanos">
                 Reservar ya <i className="fas fa-arrow-right"></i>
               </Link>
@@ -62,7 +62,7 @@ export const Carousel = ()=>{
 
         <span className="carousel-control-prev-icon"
               aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
+        <span className="visually-hidden">Anterior</span>
       </button>
 
       <button className="carousel-control-next" 
@@ -71,7 +71,7 @@ export const Carousel = ()=>{
               data-bs-slide="next">
         <span className="carousel-control-next-icon"
               aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
+        <span className="visually-hidden">Siguiente</span>
       </button>
 
       </div>

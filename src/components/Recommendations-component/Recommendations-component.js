@@ -42,7 +42,7 @@ export const Recommendations = () => {
         <img src={ menu } alt="menu"/>
 
         <Link to="/menu">
-          Consultar el menú
+          Consulta el menú
         </Link>
       </div>
     </section>

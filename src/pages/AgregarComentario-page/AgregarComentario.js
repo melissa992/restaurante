@@ -60,7 +60,7 @@ export const AgregarComentario = () => {
                 onChange={(e) => setDescription(e.target.value)}></input>
       </div>
       <button className={ pageStyles.button}
-              onClick={ CrearCommentario }>agregar un comentario</button>
+              onClick={ CrearCommentario }>agrega tu comentario</button>
     </div>
   )
 }

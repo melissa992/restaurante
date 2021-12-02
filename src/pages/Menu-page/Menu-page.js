@@ -27,7 +27,8 @@ export const MenuPage = () => {
           id="menu-container">
 
       <h1 className={ menu.title }>
-        Haz tu pedido
+        Menu
+        
       </h1>
 
       <div  className={ menu.menu__items } 
