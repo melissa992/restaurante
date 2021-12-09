@@ -34,8 +34,8 @@ export const Carousel = ()=>{
             <div className={ carousel.slide__content}>
               <img src={ logo } alt="logo restaurante" />
              
-              <Link to="/menu">
-                menu
+              <Link to="">
+                
               </Link>
             </div>
           </div>
@@ -46,17 +46,15 @@ export const Carousel = ()=>{
             <div className={ carousel.slide__content}>
               <img src={ logo } alt="logo restaurante" />
               
-              <small>Realiza tu reserva </small>
-              <Link to="/Contactanos">
-                Reservar ya <i className="fas fa-arrow-right"></i>
-              </Link>
+              <small></small>
+            
             </div>
           </div>
 
         </div>
 
       <button className="carousel-control-prev" 
-              type="button"
+              type="link"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide="prev">
 
@@ -66,7 +64,7 @@ export const Carousel = ()=>{
       </button>
 
       <button className="carousel-control-next" 
-              type="button"
+              type="link"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide="next">
         <span className="carousel-control-next-icon"

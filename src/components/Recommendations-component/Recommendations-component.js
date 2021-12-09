@@ -13,13 +13,13 @@ export const Recommendations = () => {
     <section id="RECOMENDADOS" className={ recommendations.recommendation__container }>
       <div className={ recommendations.column_1 }>
         <h2 className={recommendations.recommendation__title}>
-          Los recomendados del chef
+         Platos especiales 
         </h2>
         <div  className={ recommendations.recommendation__menus}>
           <div>
             <img  className={ recommendations.menu__preview }
                   src={ menu1 }
-                  alt="menu 1"/>
+                  alt="menu 5"/>
           </div>
           <div>
             <img  className={ recommendations.menu__preview }
@@ -42,7 +42,7 @@ export const Recommendations = () => {
         <img src={ menu } alt="menu"/>
 
         <Link to="/menu">
-          Consulta el menú
+         Ir al menú
         </Link>
       </div>
     </section>

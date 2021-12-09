@@ -16,7 +16,7 @@
   margin-top: 3rem;
   font-weight: 700;
   font-size: 3rem;
-  color: var(--purple);
+  color: var(--orange);
 }
 .recommendation__menus{
   display: grid;
@@ -30,7 +30,7 @@
   max-width: 400px;
   min-width: 250px;
   height: auto;
-  background-color: var(--purple);
+  background-color: var(--orange);
 }
 .menu__preview img{
   object-fit: contain;
@@ -60,7 +60,7 @@
   transition: background-color .5s ease;
 }
 .menu_access a:hover{
-  background-color: var(--purple);
+  background-color: var(--orange);
 }
 /* Recommendation end */
 

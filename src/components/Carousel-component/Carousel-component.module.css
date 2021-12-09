@@ -11,7 +11,7 @@
 
 
 .c-white{
-  color: #fff !important;
+  color: rgb(46, 31, 10) !important;
 }
 
 
@@ -39,13 +39,13 @@
 
 .slide__content small{
   display: block;
-  color: var(--orange);
+  
   font-weight: 700;
   font-size: 1.5rem;
   margin: 0 auto;
   margin-top: -2rem;
   margin-bottom: 2rem;
-  background-color: var(--white);
+  
   width: fit-content;
   padding: .5rem;
   clip-path: polygon(0 23%, 95% 23%, 100% 79%, 3% 90%);
@@ -54,12 +54,12 @@
 .slide__content p span{
   display: inline-block;
   padding: .5rem;
-  background-color: var(--orange);
+  background-color: var(--white);
   clip-path: polygon(0 23%, 95% 23%, 100% 79%, 3% 90%);
 }
 
 .slide__content a{
-  background-color: var(--orange);
+  
   color: var(--white) !important;
   border: none;
   padding: 1rem 1.5rem;
@@ -70,7 +70,7 @@
 }
 
 .slide__content a:hover{
-  background-color: var(--purple);
+  background-color: var(--white);
 }
 
 
